@@ -1,0 +1,5 @@
+export const resumeLink="https://drive.google.com/file/d/1GbU_yDMMczNstw-rS7xFk5mA3EsIKjsy/view?usp=sharing"
+export const twitterLink="https://twitter.com/mjxshrivastava"
+export const linkedinLink="https://www.linkedin.com/in/mrityunjay-shrivastava/"
+export const githubLink="https://github.com/Mrityunjay20"
+export const emaillink="mjxworks@gmail.com"
