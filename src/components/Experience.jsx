@@ -1,3 +1,4 @@
+import { linkedinLink } from "../utils/links";
 import { Experience, VolExperience } from "../utils/projectInfo";
 
 export default function ExperienceComponent() {
@@ -11,8 +12,8 @@ export default function ExperienceComponent() {
           </h1>
           <p className="mx-auto text-center md:w-1/2 sm:1/3  text-gray-200">
           Welcome to the professional experience section of my portfolio. Here, you'll find a concise overview of my career journey.
-          For a more detailed account of my professional background, including specific roles, projects, and endorsements, I invite you to connect with me on <a className="text-[#4cd8f7]">LinkedIn</a>.<br/> There, you'll gain deeper insights into my skills, achievements, and professional network.
-          Thank you for visiting, and I look forward to connecting with you on <a className="text-[#4cd8f7]">LinkedIn</a>!
+          For a more detailed account of my professional background, including specific roles, projects, and endorsements, I invite you to connect with me on <a href={linkedinLink} className="text-[#4cd8f7]">LinkedIn</a>.<br/> There, you'll gain deeper insights into my skills, achievements, and professional network.
+          Thank you for visiting, and I look forward to connecting with you on <a href={linkedinLink} className="text-[#4cd8f7]">LinkedIn</a>!
           
           </p>
         </div>
