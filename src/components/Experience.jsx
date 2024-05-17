@@ -79,7 +79,7 @@ export default function ExperienceComponent() {
         </div>
       </section>
 
-<section className="text-gray-400 body-font">
+<section className="text-gray-400 body-font hidden md:block" >
 <h1 className="text-[6vw] text-center mt-24 font-semibold title-font mb-24 text-[#ccd6f6]">
           Leadership experience
           </h1>
