@@ -9,7 +9,7 @@ export default function ContactMe() {
           <h1 className="sm:text-[4vw]] text-[4vw] font-semibold title-font mb-4 text-[#ccd6f6]">
             Get In Touch
           </h1>
-          <p className="mx-auto text-center w-1/2 text-gray-200">
+          <p className="mx-auto text-center w-2/3 text-gray-200">
           Looking to connect and collaborate? Whether you have a project idea, a question, or just want to say hello, I'd love to hear from you! Drop me a message and let's start the conversation.
           <span className="text-[#4cd8f7]">( I prefer LinkedIn)</span>
           </p>
