@@ -46,7 +46,7 @@ export default function HeroSection() {
               <span className="text-[#76BEF8]">Occupation:</span> SDE Intern, Hughes Systique Corporation
             </p>
             <p className="text-xl my-2">
-              <span className="text-[#76BEF8]">Interests:</span> Backend, Cloud, JS
+              <span className="text-[#76BEF8]">Interests:</span> Web, Cloud, JS
             </p>
             <p className="text-xl">
               <span className="text-[#76BEF8] mr-4">Socials: </span>

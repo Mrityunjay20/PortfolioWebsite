@@ -1,7 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import ErrorLayout from "./layouts/Error"
 import RootLayout from "./layouts/Root"
+import ExperiencePage from "./pages/ExperiencePage"
 import HomePage from "./pages/HomePage"
+import ProjectsPage from "./pages/ProjectsPage"
 
 function App() {
 
@@ -14,7 +16,11 @@ function App() {
         {index:true,
         element:<HomePage/>},
         {path:'/experience',
-          element:<h1>This is experience page</h1>
+          element:<ExperiencePage/>
+        },
+        {
+          path:'/projects',
+          element:<ProjectsPage/>
         }
         
       ]
