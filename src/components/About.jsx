@@ -3,7 +3,7 @@ import { SkillSet } from "../utils/projectInfo";
 
 export default function AboutMe(){
     return(
-        <div id="about" className="container w-4/6 h-max mx-auto ">
+        <div id="about" className="container w-4/6 mt-16 h-max mx-auto ">
         <h1 className="hidden md:block text-3xl lg:pt-10 text-[#cce7f6] font-semibold"><span className="text-[#4cd8f7] font-mono text-base">02.</span> About Me                <span className=" text-[#4cd8f7] select-none tracking-[-0.3em] font-extralight ">      -------------------------------------------------------------</span></h1>
         <h1  className="block md:hidden text-3xl lg:pt-10 text-[#cce7f6] font-semibold"><span className="text-[#4cd8f7] font-mono text-base">02.</span> About Me.</h1>
         <p className="text-gray-300 mt-5 text-lg">I'm in my Final year pursuing B.Tech in <span className="text-[#4cd8f7]">Information Technology</span> at Manipal University Jaipur (2020-2024). 
