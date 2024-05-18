@@ -2,40 +2,41 @@ import { Outlet } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import { emaillink } from "../utils/links";
 
-export default function RootLayout(){
-
-    return(
+export default function RootLayout() {
+  return (
     <>
-        <NavBar/>
-        <Outlet/>
-        <div id="footer" className="text-xl w-full flex justify-center">
-    <div className="flex flex-wrap justify-center">
-        <div className="m-2">
+      <NavBar />
+      <Outlet />
+      <div id="footer" className="text-xl w-full flex justify-center">
+        <div className="flex flex-wrap justify-center">
+          <div className="m-2">
             <button className="text-white bg-blue-500 hover:bg-blue-700 duration-300 rounded-2xl text-sm px-4 md:px-5 py-1">
-                <a href="https://twitter.com/mjxshrivastava">Twitter</a>
+              <a href="https://twitter.com/mjxshrivastava">Twitter</a>
             </button>
-        </div>
-        <div className="m-2">
+          </div>
+          <div className="m-2">
             <button className="text-white bg-gray-500 hover:bg-gray-700 duration-300 rounded-2xl text-sm px-4 md:px-5 py-1">
-                <a href="https://github.com/Mrityunjay20">Github</a>
+              <a href="https://github.com/Mrityunjay20">Github</a>
             </button>
-        </div>
-        <div className="m-2">
+          </div>
+          <div className="m-2">
             <button className="text-white bg-blue-600 hover:bg-blue-800 duration-300 rounded-2xl text-sm px-4 md:px-5 py-1">
-                <a href="https://www.linkedin.com/in/mrityunjay-shrivastava/">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/mrityunjay-shrivastava/">
+                LinkedIn
+              </a>
             </button>
-        </div>
-        <div className="m-2">
+          </div>
+          <div className="m-2">
             <button className="text-white bg-red-500 hover:bg-red-700 duration-300 rounded-2xl text-sm px-3 md:px-5 py-1">
-                <a href={`mailto:${emaillink}`}>{emaillink}</a>
+              <a href={`mailto:${emaillink}`}>{emaillink}</a>
             </button>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
 
-        <p className="mx-auto text-center w-1/2 text-[#98ecff] hover:text-[#4cd8f7]  text-sm font-mono py-5 mb-8">
-          Creativity is intelligence having fun.
-        </p>
+      <p className="mx-auto text-center w-1/2 text-[#98ecff] hover:text-[#4cd8f7]  text-sm font-mono py-5 mb-8">
+        Creativity is intelligence having fun.
+      </p>
     </>
-    )
+  );
 }
