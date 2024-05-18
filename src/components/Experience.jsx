@@ -121,7 +121,7 @@ export default function ExperienceComponent() {
     <p className="leading-relaxed">{job.Type}</p>
   </div>
   <p className="leading-relaxed">{job.Location}</p>
-  <p className="w-full md:w-10/12 hidden md:block">
+  <p className="w-full md:w-10/12 hidden md:block text-white">
     <span className="text-[#47a3e5]">Contribution:</span> {job.Desc}
   </p>
   <p className="w-full md:w-10/12 text-white md:hidden">
