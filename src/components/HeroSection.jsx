@@ -5,15 +5,15 @@ import { emaillink, githubLink, linkedinLink, twitterLink } from "../utils/links
 export default function HeroSection() {
   useEffect(() => {
     function handleScroll() {
-      const distance = window.scrollY;
-      // Move the mask div to the right and out of the screen on scroll
-      document.getElementById("mask").style.transform = `translateX(${
-        distance * 1.9
-      }px)`;
-      // Move the home div to the left on scroll
-      document.getElementById("home").style.transform = `translateX(${
-        -distance * 0.8
-      }px)`;
+      if (window.innerWidth >= 1024) { // 1024px is the breakpoint for laptops and bigger screens in Tailwind CSS
+        const distance = window.scrollY;
+        // Move the mask div to the right and out of the screen on scroll
+        document.getElementById("mask").style.transform = `translateX(${distance * 1.9}px)`;
+        // Move the home div to the left on scroll
+        document.getElementById("home").style.transform = `translateX(${
+          -distance * 0.8
+        }px)`;
+      }
     }
 
     window.addEventListener("scroll", handleScroll);
@@ -22,6 +22,7 @@ export default function HeroSection() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
 
   return (
     <section id="home" className="text-gray-300 w-full z-40 mb-[8%] bg-black body-font overflow-hidden">
