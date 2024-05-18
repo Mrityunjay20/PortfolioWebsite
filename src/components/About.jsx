@@ -11,7 +11,7 @@ export default function AboutMe(){
 
           <p className="text-[#4cd8f7] mt-8 text-lg">My skillset includes:</p>
           <div className="lg:w-9/10 mx-auto flex flex-wrap">
-            <div className="lg:w-1/4 w-full lg:pr-10 lg:py-3 mt-2 lg:mt-0">
+            <div className="lg:w-1/4 sm:1/2 w-full lg:pr-10 lg:py-3 mt-2 lg:mt-0">
               <ul className="text-[#4cd8f7] mt-5 text-base font-mono leading-10">
                 <li className="text-white">Languages</li>
                 {SkillSet[0].Languages.map((skill, index) => (
@@ -19,7 +19,7 @@ export default function AboutMe(){
                 ))}
               </ul>
             </div>
-            <div className="lg:w-1/4 w-full lg:pr-10 lg:py-3 mt-6 lg:mt-0">
+            <div className="lg:w-1/4 sm:1/2 w-full lg:pr-10 lg:py-3 mt-6 lg:mt-0">
               <ul className="text-[#4cd8f7] mt-5 text-base font-mono leading-10">
               <li className="text-white">Frameworks/Libraries</li>
               {SkillSet[0]["Frameworks/Libraries"].map((skill, index) => (
@@ -27,7 +27,7 @@ export default function AboutMe(){
                 ))}
               </ul>
             </div>
-            <div className="lg:w-1/4 w-full lg:pr-10 lg:py-3 mt-6 lg:mt-0">
+            <div className="lg:w-1/4 sm:1/2 w-full lg:pr-10 lg:py-3 mt-6 lg:mt-0">
               <ul className="text-[#4cd8f7] mt-5 text-base font-mono leading-10">
                 <li className="text-white">Database</li>
                 {SkillSet[0].Database.map((skill, index) => (
@@ -36,7 +36,7 @@ export default function AboutMe(){
               </ul>
             </div>
             
-            <div className="lg:w-1/4 w-full lg:pr-10 lg:py-3 mt-6 lg:mt-0">
+            <div className="lg:w-1/4 sm:1/2 w-full lg:pr-10 lg:py-3 mt-6 lg:mt-0">
               <ul className="text-[#4cd8f7] mt-5 text-base font-mono leading-10">
               <li className="text-white">CI/CD</li>
               {SkillSet[0]["CI/CD"].map((skill, index) => (
