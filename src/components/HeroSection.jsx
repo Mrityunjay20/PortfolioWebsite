@@ -48,7 +48,7 @@ export default function HeroSection() {
             <p className="text-xl my-2">
               <span className="text-[#76BEF8]">Interests:</span> Web, Cloud, JS
             </p>
-            <p className="text-xl w-1 sm:w-5/6">
+            <p className="text-xl hidden md:block  w-1 sm:w-2/3">
               <span className="text-[#76BEF8] mr-4">Socials: </span>
               <div className="inline flex mt-4">
                 <div>
@@ -66,12 +66,41 @@ export default function HeroSection() {
                     <a href={linkedinLink}> LinkedIn </a>
                   </button>
                 </div>
+                <br/>
                 <div>
                   <button className="text-white bg-red-500 hover:bg-red-700 duration-300 inline rounded-2xl text-sm px-3 md:px-5 mb-4 py-1">
                     <a href={`mailto:${emaillink}`}> {emaillink} </a>
                   </button>
                 </div>
               </div>
+            </p>
+            <p className="text-xl visible md:hidden">
+              <span className="text-[#76BEF8] mr-4">Socials: </span>
+              
+        <div className="flex flex-wrap justify-center">
+          <div className="m-2">
+            <button className="text-white bg-blue-500 hover:bg-blue-700 duration-300 rounded-2xl text-sm px-4 md:px-5 py-1">
+              <a href="https://twitter.com/mjxshrivastava">Twitter</a>
+            </button>
+          </div>
+          <div className="m-2">
+            <button className="text-white bg-gray-500 hover:bg-gray-700 duration-300 rounded-2xl text-sm px-4 md:px-5 py-1">
+              <a href="https://github.com/Mrityunjay20">Github</a>
+            </button>
+          </div>
+          <div className="m-2">
+            <button className="text-white bg-blue-600 hover:bg-blue-800 duration-300 rounded-2xl text-sm px-4 md:px-5 py-1">
+              <a href="https://www.linkedin.com/in/mrityunjay-shrivastava/">
+                LinkedIn
+              </a>
+            </button>
+          </div>
+          <div className="m-2">
+            <button className="text-white bg-red-500 hover:bg-red-700 duration-300 rounded-2xl text-sm px-3 md:px-5 py-1">
+              <a href={`mailto:${emaillink}`}>{emaillink}</a>
+            </button>
+          </div>
+      </div>
             </p>
             <div className="flex mt-4 items-center pb-5 border-b-2 border-black mb-5"></div>
           </div>

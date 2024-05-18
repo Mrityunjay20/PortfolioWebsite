@@ -39,7 +39,7 @@ export default function ExperienceComponent() {
                   {job.StartDate}- {job.EndDate}
                 </div>
                 <div className="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
-                  <div className="flex-shrink-0 w-28 h-28 bg-indigo-100 text-indigo-500 rounded-full inline-flex items-center justify-center overflow-hidden">
+                  <div className="flex-shrink-0 w-24 h-24 lg:w-28 lg:h-28 bg-indigo-100 text-indigo-500 rounded-full inline-flex items-center justify-center overflow-hidden">
                     <img
                       src={job.logo}
                       alt="HSC Logo"

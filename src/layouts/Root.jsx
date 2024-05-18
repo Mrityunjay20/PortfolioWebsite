@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "../components/NavBar";
-import { emaillink } from "../utils/links";
+import { emaillink, githubLink, linkedinLink, twitterLink } from "../utils/links";
 
 export default function RootLayout() {
   return (
@@ -11,17 +11,17 @@ export default function RootLayout() {
         <div className="flex flex-wrap justify-center">
           <div className="m-2">
             <button className="text-white bg-blue-500 hover:bg-blue-700 duration-300 rounded-2xl text-sm px-4 md:px-5 py-1">
-              <a href="https://twitter.com/mjxshrivastava">Twitter</a>
+              <a href={twitterLink}>Twitter</a>
             </button>
           </div>
           <div className="m-2">
             <button className="text-white bg-gray-500 hover:bg-gray-700 duration-300 rounded-2xl text-sm px-4 md:px-5 py-1">
-              <a href="https://github.com/Mrityunjay20">Github</a>
+              <a href={githubLink}>Github</a>
             </button>
           </div>
           <div className="m-2">
             <button className="text-white bg-blue-600 hover:bg-blue-800 duration-300 rounded-2xl text-sm px-4 md:px-5 py-1">
-              <a href="https://www.linkedin.com/in/mrityunjay-shrivastava/">
+              <a href={linkedinLink}>
                 LinkedIn
               </a>
             </button>
