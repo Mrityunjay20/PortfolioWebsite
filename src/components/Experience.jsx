@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { linkedinLink } from "../utils/links";
 import { Experience, VolExperience } from "../utils/projectInfo";
 
@@ -79,7 +80,7 @@ export default function ExperienceComponent() {
         </div>
       </section>
 
-<section className="text-gray-400 body-font hidden md:block" >
+<section className="text-gray-400 body-font" >
 <h1 className="text-[6vw] text-center mt-24 font-semibold title-font mb-24 text-[#ccd6f6]">
           Leadership experience
           </h1>
@@ -112,19 +113,25 @@ export default function ExperienceComponent() {
                   </div>
 
                   <div className="flex-grow sm:pl-6 mt-6 sm:mt-0">
-                    <h2 className="font-medium title-font text-[#47a3e5] mb-1 text-xl">
-                      {company}
-                    </h2>
-                    <div className="flex text-[#47a3e5] justify-between">
-                      <p className="leading-relaxed">{job.Role}</p>
-                      <p className="leading-relaxed">{job.Type}</p>
-                    </div>
-                    <p className="leading-relaxed">{job.Location}</p>
-                    <p className="w-10/12">
-                      <span className="text-[#47a3e5]">Contribution:</span>{" "}
-                      {job.Desc}
-                    </p>
-                  </div>
+  <h2 className="font-medium title-font text-[#47a3e5] mb-1 text-xl">
+    {company}
+  </h2>
+  <div className="flex flex-col sm:flex-row text-[#47a3e5] justify-between">
+    <p className="leading-relaxed">{job.Role}</p>
+    <p className="leading-relaxed">{job.Type}</p>
+  </div>
+  <p className="leading-relaxed">{job.Location}</p>
+  <p className="w-full md:w-10/12 hidden md:block">
+    <span className="text-[#47a3e5]">Contribution:</span> {job.Desc}
+  </p>
+  <p className="w-full md:w-10/12 text-white md:hidden">
+  <span className="text-[#47a3e5]">Contribution:</span> 
+    
+    {job.Desc.substring(0,400)}
+    <Link className="text-blue-500" to={linkedinLink}>....(view more)</Link>
+  </p>
+</div>
+
                 </div>
               </div>
             </>
