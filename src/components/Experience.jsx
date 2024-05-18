@@ -57,7 +57,7 @@ export default function ExperienceComponent() {
                       <p className="leading-relaxed">{job.Type}</p>
                     </div>
                     <p className="leading-relaxed">{job.Location}</p>
-                    <p className="w-10/12">
+                    <p className="w-10/12 text-white">
                       <span className="text-[#47a3e5]">Worked on:</span>{" "}
                       {job.Technologies.map((tech, index) => (
                         <span key={index}>
