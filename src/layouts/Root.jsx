@@ -37,6 +37,7 @@ export default function RootLayout() {
       <p className="mx-auto text-center w-1/2 text-[#98ecff] hover:text-[#4cd8f7]  text-sm font-mono py-5 mb-8">
         Creativity is intelligence having fun.
       </p>
+      <p className="mx-auto text-white font-mono text-xs py-2 text-center">MJX-2024</p>
     </>
   );
 }
