@@ -48,7 +48,7 @@ export default function HeroSection() {
             <p className="text-xl my-2">
               <span className="text-[#76BEF8]">Interests:</span> Web, Cloud, JS
             </p>
-            <p className="text-xl">
+            <p className="text-xl w-1 sm:w-5/6">
               <span className="text-[#76BEF8] mr-4">Socials: </span>
               <div className="inline flex mt-4">
                 <div>
