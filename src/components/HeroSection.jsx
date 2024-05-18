@@ -34,7 +34,7 @@ export default function HeroSection() {
             <br />
             <a href="https://www.linkedin.com/in/mrityunjay-shrivastava/" target="_blank">
               <h1 className="text-[#cce7f6] w-max sm:ml-3 lg:ml-0 text-4xl md:text-5xl lg:text-6xl pt-5 title-font font-semibold hover:text-[#76BEF8] duration-300 mb-[-10] ">
-                Mrityunjay Shrivastava
+                Mrityunjay<br className="block md:hidden"/> Shrivastava
               </h1>
             </a>{" "}
             <br />
@@ -43,7 +43,7 @@ export default function HeroSection() {
               <span className="text-[#76BEF8]">(2020-24)</span>
             </p>
             <p className="text-xl my-2">
-              <span className="text-[#76BEF8]">Occupation:</span> SDE Intern, Hughes Systique Corporation
+              <span className="text-[#76BEF8]">Occupation:</span> SDE Intern,<br className="block md:hidden"/> Hughes Systique Corporation
             </p>
             <p className="text-xl my-2">
               <span className="text-[#76BEF8]">Interests:</span> Web, Cloud, JS
