@@ -53,3 +53,17 @@ export const VolExperience= {
         "Desc":"COMPUTE is ACM India’s national flagship conference on Computer Science Education. COMPUTE 2022 was hosted by Manipal University Jaipur, with the participation of 70+ esteemed faculties and researchers from all parts of the country, and witnessed esteemed speakers like Mr. Sriram Rajamani (Managing Director of Microsoft Research India), Mr. Andrew Thangaraj (Prof. IIT Madras), Mr. Brett Becker (Vice-Chair of SIGCSE) and many more. I was responsible for directing the development of all the media content for the event"
     },
 }
+
+export const ProjectInfo ={
+    "MailFlow":{
+        'Desc':'MailFlow is an AI tool designed for managing emails, built with Google PaLM, Google Cloud Platform, MongoDB, and node.js. It generates and paraphrases professional emails from minimal input, saves them, and can send or schedule emails directly through Gmail.',
+        'GithubLink':'https://github.com/Mrityunjay20/mailflow-frontend',
+        'websiteLink':'https://mailflowai-ten.vercel.app/'
+    },
+    "TicTacToe":{
+        'Desc':'This is a simple Tic Tac Toe game built using React, leveraging React states to manage the game state and user interactions. The project provides a classic Tic Tac Toe experience where two players take turns to make their moves and the game declares a winner or ends in a draw.',
+        'GithubLink':'https://github.com/Mrityunjay20/TicTacToe',
+        'websiteLink':'https://mjx-tictactoe.vercel.app/'
+    }
+
+}
