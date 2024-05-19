@@ -28,8 +28,8 @@ export const Experience= {
         "logo":tangleimg,
         "Role":"SDE Intern",
         "Type":"Internship",
-        "StartDate":"Oct 2023",
-        "EndDate":"Dec 2023",
+        "StartDate":"Oct 2022",
+        "EndDate":"May 2023",
         "Location": "Remote",
         "Technologies":["React.js","Tailwind CSS","Node.js","Express.js","MongoDB"]
     },
@@ -58,7 +58,7 @@ export const VolExperience= {
 
 export const ProjectInfo ={
     "MailFlow":{
-        'Desc':'MailFlow is an AI tool designed for managing emails, built with Google PaLM, Google Cloud Platform, MongoDB, and node.js. It generates and paraphrases professional emails from minimal input, saves them, and can send or schedule emails directly through Gmail.',
+        'Desc':'MailFlow is an AI tool designed for managing emails, built with Google PaLM, Google Cloud Platform, MongoDB, and express.js. It generates and paraphrases professional emails from minimal input, saves them, and can send or schedule emails directly through Gmail.',
         'GithubLink':'https://github.com/Mrityunjay20/mailflow-frontend',
         'websiteLink':'https://mailflowai-ten.vercel.app/',
         'imglink':tictactoeImg
