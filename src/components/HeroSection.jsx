@@ -49,7 +49,7 @@ export default function HeroSection() {
             <p className="text-xl my-2">
               <span className="text-[#76BEF8]">Interests:</span> Web, Cloud, JS
             </p>
-            <p className="text-xl hidden md:block  w-1 sm:w-2/3">
+            <div className="text-xl hidden md:block  w-1 sm:w-2/3">
               <span className="text-[#76BEF8] mr-4">Socials: </span>
               <div className="inline flex mt-4">
                 <div>
@@ -74,8 +74,8 @@ export default function HeroSection() {
                   </button>
                 </div>
               </div>
-            </p>
-            <p className="text-xl visible md:hidden">
+            </div>
+            <div className="text-xl visible md:hidden">
               <span className="text-[#76BEF8] mr-4">Socials: </span>
               
         <div className="flex flex-wrap justify-center">
@@ -102,7 +102,7 @@ export default function HeroSection() {
             </button>
           </div>
       </div>
-            </p>
+            </div>
             <div className="flex mt-4 items-center pb-5 border-b-2 border-black mb-5"></div>
           </div>
           <div id="mask" className="relative invisible z-50 lg:visible lg:w-80 lg:h-80 ml-[16%] mt-10">

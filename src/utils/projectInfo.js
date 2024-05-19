@@ -10,7 +10,8 @@ export const SkillSet = [
         "Languages": ["Java", "TypeScript", "JavaScript", "SQL"],
         "Frameworks/Libraries": ["Next.js", "React.js", "Express.js", "Spring Boot"],
         "Database": ["MongoDB", "MySQL", "Firebase", "Supabase"],
-        "CI/CD": ["Git", "Github", "Docker"]
+        "CI/CD": ["Git", "Github", "Docker"],
+        "UI":["3js", "Tailwind", "Figma"]
     }
 ];
 
