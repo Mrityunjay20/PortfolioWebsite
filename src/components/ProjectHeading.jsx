@@ -12,7 +12,7 @@ export default function ProjectHeading() {
   <MagicCubes className="relative w-1 my-12 h-full cursor-crosshair" />
   <div className="hidden sm:hidden md:block relative left-0 top-0 mb-4 mr-6 pointer-events-none">
   <h1 className="text-[#cce7f6] text-xs md:text-right lg:text-base py-2 title-font font-mono  duration-300">
-    Click and drag to rotate, Left click (2 finger on mac)  to drag (follows cursor)
+    Right Click and drag to rotate, Left click (2 finger on mac)  to drag (follows cursor)
   </h1>
 </div>
 </div>
