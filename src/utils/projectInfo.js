@@ -2,6 +2,8 @@ import hscimg from '../assets/orglogos/hsc.png'
 import tangleimg from '../assets/orglogos/tangle.jpeg'
 import sigbedimg from '../assets/orglogos/sigbed.png'
 import acmimg from "../assets/orglogos/acm.jpeg"
+import tictactoeImg from '../assets/projectss/tictactoe.png'
+import sigbedImg from '../assets/projectss/sigbed.png'
 
 export const SkillSet = [
     {
@@ -58,12 +60,21 @@ export const ProjectInfo ={
     "MailFlow":{
         'Desc':'MailFlow is an AI tool designed for managing emails, built with Google PaLM, Google Cloud Platform, MongoDB, and node.js. It generates and paraphrases professional emails from minimal input, saves them, and can send or schedule emails directly through Gmail.',
         'GithubLink':'https://github.com/Mrityunjay20/mailflow-frontend',
-        'websiteLink':'https://mailflowai-ten.vercel.app/'
+        'websiteLink':'https://mailflowai-ten.vercel.app/',
+        'imglink':tictactoeImg
+    },
+    "MUJ ACM SIGBED":{
+        'Desc':'SIGBED (Special Interest Group on Embedded Systems) is a global organization that focuses on research and development in embedded systems. This website serves as a platform to showcase the activities, events, and achievements of the SIGBED MUJ Student Chapter. It is built using NEXT.js, supabase, tailwind and Material UI',
+        'GithubLink':'https://github.com/Mrityunjay20/sigbed',
+        'websiteLink':'https://mujsigbed.acm.org/',
+        'imglink':sigbedImg
     },
     "TicTacToe":{
         'Desc':'This is a simple Tic Tac Toe game built using React, leveraging React states to manage the game state and user interactions. The project provides a classic Tic Tac Toe experience where two players take turns to make their moves and the game declares a winner or ends in a draw.',
         'GithubLink':'https://github.com/Mrityunjay20/TicTacToe',
-        'websiteLink':'https://mjx-tictactoe.vercel.app/'
-    }
+        'websiteLink':'https://mjx-tictactoe.vercel.app/',
+        'imglink':tictactoeImg
+    },
+    
 
 }

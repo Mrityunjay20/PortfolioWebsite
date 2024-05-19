@@ -1,17 +1,15 @@
 import { Link } from "react-router-dom";
 
-export default function ProjectCard({projectName,projectDesc ,githubLink, websiteLink}) {
+export default function ProjectCard({projectName,projectDesc ,githubLink, websiteLink, projectImg}) {
   return (
     <>
-      <section className="text-gray-200 w-full body-font">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-wrap -m-4">
+        
             <div className="p-4 md:w-1/3">
               <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                 <img
-                  className="lg:h-48 md:h-36 w-full object-cover object-center"
-                  src="https://dummyimage.com/720x400"
-                  alt="blog"
+                  className="lg:h-56 md:h-36 w-full object-cover object-center"
+                  src={projectImg}
+                  alt="project image"
                 />
                 <div className="p-6">
                   <h1 className="title-font text-lg font-medium text-blue-400 mb-3">
@@ -48,9 +46,8 @@ export default function ProjectCard({projectName,projectDesc ,githubLink, websit
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          
+
     </>
   );
 }
