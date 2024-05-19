@@ -49,7 +49,7 @@ export const VolExperience= {
         "logo":acmimg,
         "Role":"Student Lead",
         "Type":"Volunteer",
-        "StartDate":"Nov 2022 ",
+        "StartDate":"Nov 2022",
         "EndDate":"Dec 2022",
         "Location": "Jaipur",
         "Desc":"COMPUTE is ACM India’s national flagship conference on Computer Science Education. COMPUTE 2022 was hosted by Manipal University Jaipur, with the participation of 70+ esteemed faculties and researchers from all parts of the country, and witnessed esteemed speakers like Mr. Sriram Rajamani (Managing Director of Microsoft Research India), Mr. Andrew Thangaraj (Prof. IIT Madras), Mr. Brett Becker (Vice-Chair of SIGCSE) and many more. I was responsible for directing the development of all the media content for the event"
@@ -64,7 +64,7 @@ export const ProjectInfo ={
         'imglink':tictactoeImg
     },
     "MUJ ACM SIGBED":{
-        'Desc':'SIGBED (Special Interest Group on Embedded Systems) is a global organization that focuses on research and development in embedded systems. This website serves as a platform to showcase the activities, events, and achievements of the SIGBED MUJ Student Chapter. It is built using NEXT.js, supabase, tailwind and Material UI',
+        'Desc':'SIGBED (Special Interest Group on Embedded Systems) is a global organization that focuses on research and development in embedded systems. This website serves as a platform to showcase the activities, events, and achievements of the SIGBED MUJ Student Chapter. It is built using NEXT.js, supabase, tailwind and Material-Tailwind. This website also won National ACM website Award 2023',
         'GithubLink':'https://github.com/Mrityunjay20/sigbed',
         'websiteLink':'https://mujsigbed.acm.org/',
         'imglink':sigbedImg

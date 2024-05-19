@@ -4,8 +4,8 @@ export default function ProjectCard({projectName,projectDesc ,githubLink, websit
   return (
     <>
         
-            <div className="p-4 md:w-1/3">
-              <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+            <div className="p-4 md:w-1/3 hover:shadow-2xl shadow-blue-50 ">
+              <div className="h-full border-2 border-gray-200  md:hover:-translate-y-6 duration-300 bg-opacity-15 border-opacity-60 rounded-lg overflow-hidden">
                 <img
                   className="lg:h-56 md:h-36 w-full object-cover object-center"
                   src={projectImg}
