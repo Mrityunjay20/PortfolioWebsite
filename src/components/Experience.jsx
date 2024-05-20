@@ -8,7 +8,7 @@ export default function ExperienceComponent() {
       <section id="experience" className="text-gray-400 body-font relative">
         <div className="container px-5 py-4 mx-auto">
           <div className="flex flex-col text-center w-full mb-12">
-            <h1 className="text-[6vw] font-semibold title-font mb-4 text-[#ccd6f6]">
+            <h1 className="text-[4vw] font-semibold title-font mb-4 text-[#ccd6f6]">
               Work Experience
             </h1>
             <p className="mx-auto text-center md:w-1/2 sm:1/3  text-gray-200">
@@ -87,7 +87,7 @@ export default function ExperienceComponent() {
       </section>
 
       <section className="text-gray-400 body-font">
-        <h1 className="text-[6vw] text-center mt-24 font-semibold title-font mb-24 text-[#ccd6f6]">
+        <h1 className="text-[4vw] text-center mt-24 font-semibold title-font mb-24 text-[#ccd6f6]">
           Leadership experience
         </h1>
         <div className="container px-5 pb-16 mx-auto flex flex-wrap">

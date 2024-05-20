@@ -25,7 +25,7 @@ export default function HeroSection() {
 
 
   return (
-    <section id="home" className="text-gray-300 w-full z-40 bg-black body-font overflow-hidden">
+    <section id="home" className="text-gray-300 w-full h-screen z-40 bg-black body-font overflow-hidden">
       <div className="container lg:py-16 mx-auto z-50 bg-black">
         <div className="lg:w-9/10 mx-auto z-50 flex flex-wrap">
           <div className="lg:w-1/2 w-full lg:pr-10 lg:py-6 ml-6 mt-6 lg:mt-0">

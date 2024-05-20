@@ -5,7 +5,6 @@ import {
   Stage,
   Grid,
   OrbitControls,
-  Environment,
 } from "@react-three/drei";
 import {
   EffectComposer,
@@ -13,8 +12,7 @@ import {
   ToneMapping,
 } from "@react-three/postprocessing";
 import { easing } from "maath";
-import { Logo } from "@pmndrs/branding";
-import "tailwindcss/tailwind.css"; // Make sure to import Tailwind CSS
+import "tailwindcss/tailwind.css"; 
 
 function Kamdo(props) {
   const head = useRef();
@@ -67,7 +65,7 @@ function Kamdo(props) {
 
 useGLTF.preload("/s2wt_kamdo_industrial_divinities-transformed.glb");
 
-export default function MagicCubes() {
+export default function MagicRobot() {
   return (
     <><div className="h-96 w-full">
       <Canvas flat shadows camera={{ position: [-15, 0, 10], fov: 25 }}>
