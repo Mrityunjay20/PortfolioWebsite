@@ -39,14 +39,14 @@ export default function HeroSection() {
               </h1>
             </a>{" "}
             <br />
-            <p className="text-xl my-2">
+            <p className="text-xl my-4">
               <span className="text-[#76BEF8]">Education:</span> B.Tech Information Technology,<br/> Manipal University Jaipur{" "}
               <span className="text-[#76BEF8]">(2020-24)</span>
             </p>
-            <p className="text-xl my-2">
+            <p className="text-xl my-4">
               <span className="text-[#76BEF8]">Occupation:</span> SDE Intern,<br className="block md:hidden"/> Hughes Systique Corporation
             </p>
-            <p className="text-xl my-2">
+            <p className="text-xl my-4">
               <span className="text-[#76BEF8]">Interests:</span> Web, Cloud, JS
             </p>
             <div className="text-xl hidden md:block  w-1 sm:w-2/3">
@@ -105,7 +105,7 @@ export default function HeroSection() {
             </div>
             <div className="flex mt-4 items-center pb-5 border-b-2 border-black mb-5"></div>
           </div>
-          <div id="mask" className="relative invisible z-50 lg:visible lg:w-80 lg:h-80 ml-[16%] mt-10">
+          <div id="mask" className="relative my-4 invisible z-50 lg:visible lg:w-80 lg:h-80 ml-[16%] mt-10">
             <img src={mjximg} className="rounded-full w-80 h-80 absolute inset-0" />
             <div className="rounded-full w-full h-full border-8 border-red-500 border-opacity-75 absolute top-0 left-0 animate-pulse"></div>
             <div className="rounded-full w-full h-full border-8 border-blue-500 border-opacity-75 absolute top-0 left-0 animate-pulse"></div>
