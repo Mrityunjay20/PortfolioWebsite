@@ -3,7 +3,7 @@ import { SkillSet } from "../utils/projectInfo";
 
 export default function AboutMe(){
     return(
-        <div id="about" className="container w-full mt-16 h-max mx-auto ">
+        <div id="about" className="container w-full sm:mt-0 lg:mt-16 h-max mx-auto ">
             <div className="ml-12">
         <h1 className="w-3/4 hidden md:block text-3xl lg:pt-10 text-[#cce7f6] font-semibold"><span className="text-[#4cd8f7] font-mono text-base">02.</span> About Me                <span className=" text-[#4cd8f7] select-none tracking-[-0.3em] font-extralight ">      -------------------------------------------------------------</span></h1>
         <h1  className=" w-3/4 block md:hidden text-3xl lg:pt-10 text-[#cce7f6] font-semibold"><span className="text-[#4cd8f7] font-mono text-base">02.</span> About Me.</h1>

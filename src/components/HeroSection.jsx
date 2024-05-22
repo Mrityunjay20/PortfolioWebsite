@@ -25,10 +25,10 @@ export default function HeroSection() {
 
 
   return (
-    <section id="home" className="text-gray-300 w-full h-screen z-40 bg-black body-font overflow-hidden">
-      <div className="container lg:py-16 mx-auto z-50 bg-black">
+    <section id="home" className="text-gray-300 w-full sm:max-h-max md:sm:max-h-max lg:h-screen z-40 bg-black body-font overflow-hidden">
+      <div className="container lg:py-8 sm:py-0 mx-auto z-50 bg-black">
         <div className="lg:w-9/10 mx-auto z-50 flex flex-wrap">
-          <div className="lg:w-1/2 w-full lg:pr-10 lg:py-6 ml-6 mt-6 lg:mt-0">
+          <div className="lg:w-1/2 w-full lg:pr-10  lg:py-6 ml-12 mt-6 lg:mt-0">
             <h1 className="text-[#76BEF8] sm:ml-3 lg:ml-0 text-bas title-font font-mono mb-[-30px]">
               Hey, my name is
             </h1>{" "}
