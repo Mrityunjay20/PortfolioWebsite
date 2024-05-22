@@ -4,6 +4,7 @@ import sigbedimg from '../assets/orglogos/sigbed.png'
 import acmimg from "../assets/orglogos/acm.jpeg"
 import tictactoeImg from '../assets/projectss/tictactoe.png'
 import sigbedImg from '../assets/projectss/sigbed.png'
+import mailflowImg from '../assets/projectss/mailflow.png'
 
 export const SkillSet = [
     {
@@ -59,10 +60,10 @@ export const VolExperience= {
 
 export const ProjectInfo ={
     "MailFlow":{
-        'Desc':'MailFlow is an AI tool designed for managing emails, built with Google PaLM, Google Cloud Platform, MongoDB, and express.js. It generates and paraphrases professional emails from minimal input, saves them, and can send or schedule emails directly through Gmail.',
+        'Desc':'MailFlow is an AI tool designed for managing emails, built with Google PaLM, Google Cloud Platform, MongoDB, and express.js. It generates and paraphrases professional emails from minimal input, saves them, and can send or schedule emails directly through Gmail. (work in progress)',
         'GithubLink':'https://github.com/Mrityunjay20/mailflow-frontend',
-        'websiteLink':'https://mailflowai-ten.vercel.app/',
-        'imglink':tictactoeImg
+        'websiteLink':'#',
+        'imglink':mailflowImg
     },
     "MUJ ACM SIGBED":{
         'Desc':'SIGBED (Special Interest Group on Embedded Systems) is a global organization that focuses on research and development in embedded systems. This website serves as a platform to showcase the activities, events, and achievements of the SIGBED MUJ Student Chapter. It is built using NEXT.js, supabase, tailwind and Material-Tailwind. This website also won National ACM website Award 2023',

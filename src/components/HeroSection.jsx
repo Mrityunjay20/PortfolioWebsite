@@ -33,11 +33,9 @@ export default function HeroSection() {
               Hey, my name is
             </h1>{" "}
             <br />
-            <a href="https://www.linkedin.com/in/mrityunjay-shrivastava/" target="_blank">
               <h1 className="text-[#cce7f6] w-max sm:ml-3 lg:ml-0 text-4xl md:text-5xl lg:text-6xl pt-5 title-font font-semibold hover:text-[#76BEF8] duration-300 mb-[-10] ">
                 Mrityunjay<br className="block md:hidden"/> Shrivastava
               </h1>
-            </a>{" "}
             <br />
             <p className="text-xl my-4">
               <span className="text-[#76BEF8]">Education:</span> B.Tech Information Technology,<br/> Manipal University Jaipur{" "}
