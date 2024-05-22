@@ -16,6 +16,7 @@
     "@react-three/postprocessing": "^2.16.2",
     "@splinetool/r3f-spline": "^1.0.2",
     "@splinetool/react-spline": "^2.2.6",
+    "@vercel/analytics": "^1.2.2",
     "maath": "^0.10.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

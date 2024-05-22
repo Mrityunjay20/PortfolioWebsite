@@ -4,6 +4,7 @@ import RootLayout from "./layouts/Root"
 import ExperiencePage from "./pages/ExperiencePage"
 import HomePage from "./pages/HomePage"
 import ProjectsPage from "./pages/ProjectsPage"
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
 
@@ -26,8 +27,10 @@ function App() {
       ]
     }
   ])
-  return (
+  return (<>
     <RouterProvider  router={router}/>
+    <Analytics/>
+    </>
   )
 }
 
