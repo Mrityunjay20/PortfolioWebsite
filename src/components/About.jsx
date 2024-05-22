@@ -3,10 +3,10 @@ import { SkillSet } from "../utils/projectInfo";
 
 export default function AboutMe(){
     return(
-        <div id="about" className="container w-full sm:mt-0 lg:mt-16 h-max mx-auto ">
+        <div id="about" className="container w-full sm:mt-0 h-max mx-auto ">
             <div className="ml-12">
-        <h1 className="w-3/4 hidden md:block text-3xl lg:pt-10 text-[#cce7f6] font-semibold"><span className="text-[#4cd8f7] font-mono text-base">02.</span> About Me                <span className=" text-[#4cd8f7] select-none tracking-[-0.3em] font-extralight ">      -------------------------------------------------------------</span></h1>
-        <h1  className=" w-3/4 block md:hidden text-3xl lg:pt-10 text-[#cce7f6] font-semibold"><span className="text-[#4cd8f7] font-mono text-base">02.</span> About Me.</h1>
+        <h1 className="w-3/4 hidden md:block text-3xl text-[#cce7f6] font-semibold"><span className="text-[#4cd8f7] font-mono text-base">02.</span> About Me                <span className=" text-[#4cd8f7] select-none tracking-[-0.3em] font-extralight ">      -------------------------------------------------------------</span></h1>
+        <h1  className=" w-3/4 block md:hidden text-3xl  text-[#cce7f6] font-semibold"><span className="text-[#4cd8f7] font-mono text-base">02.</span> About Me.</h1>
         <p className="w-3/4 text-gray-300 mt-5 text-lg">I have always loved building Ideas from scratch, I started learning web development back in 2 year of my engineering. Currently I'm in my Final year pursuing B.Tech in <span className="text-[#4cd8f7]">Information Technology</span> from Manipal University Jaipur (2020-2024).
         </p>
         <p className="w-3/4 text-gray-300 mt-5 text-lg">I began my journey in web development during my second year of engineering, and since then, I have continuously honed my skills and expanded my knowledge base. My enthusiasm for creating innovative and efficient web solutions has driven me to stay updated with the latest trends and technologies in the field.
