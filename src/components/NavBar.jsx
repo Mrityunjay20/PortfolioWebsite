@@ -13,7 +13,7 @@ export default function NavBar() {
   return (
     <header
       id="navbar"
-      className="text-gray-600 bottom-30 body-font snap-center transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300"
+      className="text-gray-600 z-50 bottom-30 body-font snap-center transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300"
     >
       <div className="mx-auto z-10 flex flex-wrap p-5 flex-col md:flex-row items-center">
         <nav className="md:ml-auto md:mr-auto rounded-xl bg-gray-200 transition ease-in hover:delay-200 py-2 px-5 mt-8 flex flex-wrap items-center text-base justify-center">
