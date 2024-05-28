@@ -5,6 +5,8 @@ import acmimg from "../assets/orglogos/acm.jpeg"
 import tictactoeImg from '../assets/projectss/tictactoe.png'
 import sigbedImg from '../assets/projectss/sigbed.png'
 import mailflowImg from '../assets/projectss/mailflow.png'
+import portfolioImg from '../assets/projectss/portfolio.png'
+
 
 export const SkillSet = [
     {
@@ -59,6 +61,12 @@ export const VolExperience= {
 }
 
 export const ProjectInfo ={
+    "Portfolio Website":{
+        'Desc':'My portfolio website, a dynamic and interactive showcase of my professional journey, skills, and projects. Built using React, React Router DOM, Tailwind CSS, Vite, Three.js, and React Three Fiber, this website also features rich interactions with 3D models. The integration of Three.js allows for immersive 3D model interactions, adding a unique visual depth and interactivity that enhances the overall user experience.',
+        'GithubLink':'https://github.com/Mrityunjay20/portfolio',
+        'websiteLink':'https://mjxsh.vercel.app/',
+        'imglink':portfolioImg
+    },
     "MailFlow":{
         'Desc':'MailFlow is an AI tool designed for managing emails, built with Google PaLM, Google Cloud Platform, MongoDB, and express.js. It generates and paraphrases professional emails from minimal input, saves them, and can send or schedule emails directly through Gmail. (work in progress)',
         'GithubLink':'https://github.com/Mrityunjay20/mailflow-frontend',
