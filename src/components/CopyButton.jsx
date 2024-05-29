@@ -18,7 +18,7 @@ const CopyButton = ({ text }) => {
     <>
     <button
       onClick={handleCopy}
-      className="text-white bg-red-500 w-full hover:bg-red-700 duration-300 rounded-2xl text-sm px-3 md:px-5 py-1 flex items-center justify-between"
+      className="text-white mt-1 bg-red-500 w-full hover:bg-red-700 duration-300 rounded-2xl text-sm px-3 md:px-5 py-1 flex items-center justify-between"
     >
       <span className='mx-2'>mjxworks@gmail.com</span>
       <svg
