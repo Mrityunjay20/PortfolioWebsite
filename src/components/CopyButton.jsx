@@ -1,16 +1,21 @@
 // src/components/CopyButton.js
-import React from 'react';
+import React, { useState } from 'react';
+import CustomAlert from './CustomAlert';
 
 const CopyButton = ({ text }) => {
+  const [showAlert, setShowAlert] = useState(false);
   const handleCopy = () => {
     navigator.clipboard.writeText(text).then(() => {
-      console.log('Text copied to clipboard!');
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 2000);
+      console('Text copied to clipboard!');
     }).catch(err => {
       console.error('Failed to copy text: ', err);
     });
   };
 
   return (
+    <>
     <button
       onClick={handleCopy}
       className="text-white bg-red-500 w-full hover:bg-red-700 duration-300 rounded-2xl text-sm px-3 md:px-5 py-1 flex items-center justify-between"
@@ -43,6 +48,8 @@ const CopyButton = ({ text }) => {
         </g>
       </svg>
     </button>
+    <CustomAlert message="Email copied!" show={showAlert} />
+    </>
   );
 };
 

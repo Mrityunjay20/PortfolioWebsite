@@ -24,6 +24,8 @@ export default function HeroSection() {
     };
   }, []);
 
+  
+
 
   return (
     <section id="home" className="text-gray-300 mt-12 w-full sm:max-h-max md:sm:max-h-max lg:h-screen z-40 bg-black body-font overflow-hidden">
