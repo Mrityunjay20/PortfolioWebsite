@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import CopyButton from "../components/CopyButton";
 import NavBar from "../components/NavBar";
 import { emaillink, githubLink, linkedinLink, twitterLink } from "../utils/links";
 
@@ -27,12 +28,11 @@ export default function RootLayout() {
             </button>
           </div>
           <div className="m-2">
-            <button className="text-white bg-red-500 hover:bg-red-700 duration-300 rounded-2xl text-sm px-3 md:px-5 py-1">
-              <a href={`mailto:${emaillink}`}>{emaillink}</a>
-            </button>
+          <CopyButton text={"mjxworks@gmail.com"} />
           </div>
         </div>
       </div>
+
 
       <p className="mx-auto text-center w-1/2 text-[#98ecff] hover:text-[#4cd8f7]  text-sm font-mono py-5 mb-8">
         Creativity is intelligence having fun.

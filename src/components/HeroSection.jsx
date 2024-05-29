@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import mjximg from "../assets/mjx.png";
 import { emaillink, githubLink, linkedinLink, twitterLink } from "../utils/links";
+import CopyButton from "./CopyButton";
 
 export default function HeroSection() {
   useEffect(() => {
@@ -67,9 +68,7 @@ export default function HeroSection() {
                 </div>
                 <br/>
                 <div>
-                  <button className="text-white bg-red-500 hover:bg-red-700 duration-300 inline rounded-2xl text-sm px-3 md:px-5 mb-4 py-1">
-                    <a href={`mailto:${emaillink}`}> {emaillink} </a>
-                  </button>
+                <CopyButton text={"mjxworks@gmail.com"} />
                 </div>
               </div>
             </div>
