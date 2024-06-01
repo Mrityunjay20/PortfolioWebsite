@@ -6,11 +6,13 @@ export default function ProjectCard({projectName,projectDesc ,githubLink, websit
         
             <div className="p-4 md:w-1/3 hover:shadow-2xl shadow-blue-50 ">
               <div className="h-full border-2 border-gray-200  md:hover:-translate-y-6 duration-300 bg-opacity-15 border-opacity-60 rounded-lg overflow-hidden">
+                
+                <Link to={githubLink}>
                 <img
-                  className="lg:h-56 md:h-36 w-full object-cover object-center"
+                  className="lg:h-56 md:h-36 w-full object-cover object-center hover:scale-105 hover:cursor-pointer duration-300"
                   src={projectImg}
                   alt="project image"
-                />
+                /></Link>
                 <div className="flex items-center px-4 ml-2 py-4 flex-wrap">
                     <a
                       className="text-blue-400 inline-flex items-center lg:mb-0"

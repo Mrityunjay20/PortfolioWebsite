@@ -10,7 +10,7 @@ import portfolioImg from '../assets/projectss/portfolio.png'
 
 export const SkillSet = [
     {
-        "Languages": ["Java", "TypeScript", "JavaScript", "SQL"],
+        "Languages": [`Java`, "TypeScript", "JavaScript", "SQL"],
         "Frameworks/Libraries": ["Next.js", "React.js", "Express.js", "Spring Boot"],
         "Database": ["MongoDB", "MySQL", "Firebase", "Supabase"],
         "CI/CD": ["Git", "Github", "Docker"],
