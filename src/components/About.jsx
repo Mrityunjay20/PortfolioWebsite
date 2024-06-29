@@ -19,7 +19,7 @@ export default function AboutMe() {
         id="about"
         className="container lg:flex w-full sm:mt-0 h-max mx-auto lg:w-11/12"
       >
-        <div className="bg-gray-950 p-8 mx-4 lg:w-2/6 md:w-10/12 sm:w-11/12 sm:mx-4 hover:scale-105 duration-200 rounded-lg">
+        <div className="bg-zinc-950 p-8 mx-4 lg:w-2/6 md:w-10/12 sm:w-11/12 sm:mx-4 hover:scale-105 duration-200 rounded-lg">
           <h1 className="w-full text-4xl text-[#cce7f6] font-semibold">
              About Me
           </h1>
