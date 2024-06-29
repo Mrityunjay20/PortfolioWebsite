@@ -1,81 +1,86 @@
-import { SkillSet } from "../utils/projectInfo";
-
+import {
+  CICD,
+  CICDLogos,
+  Database,
+  DatabaseLogos,
+  Frameworks,
+  FrameworksLogos,
+  Languages,
+  LanguagesLogos,
+  UI,
+  UILogos,
+} from "../utils/projectInfo";
+import SkillCards from "./SkillCards";
 
 export default function AboutMe() {
   return (
-    <div id="about" className="container w-full sm:mt-0 h-max mx-auto ">
-      <div className="ml-12">
-        <h1 className="w-3/4 hidden md:block text-3xl text-[#cce7f6] font-semibold">
-          <span className="text-[#4cd8f7] font-mono text-base">02.</span> About
-          Me{" "}
-          <span className=" text-[#4cd8f7] select-none tracking-[-0.3em] font-extralight ">
-            {" "}
-            -------------------------------------------------------------
-          </span>
-        </h1>
-        <h1 className=" w-3/4 block md:hidden text-3xl  text-[#cce7f6] font-semibold">
-          <span className="text-[#4cd8f7] font-mono text-base">02.</span> About
-          Me.
-        </h1>
-        <p className="w-3/4 text-gray-300 mt-5 text-lg">
-          I have always loved building Ideas from scratch, currently I'm in my
-          Final year pursuing B.Tech in{" "}
-          <span className="text-[#4cd8f7]">Information Technology</span> from
-          Manipal University Jaipur (2020-2024).
-        </p>
-        <p className="w-3/4 text-gray-300 mt-5 text-lg">
-          I began my journey in web development during my second year of
-          engineering, and since then, I have continuously honed my skills and
-          expanded my knowledge base. My enthusiasm for creating innovative and
-          efficient web solutions has driven me to stay updated with the latest
-          trends and technologies in the field.
-        </p>
-        <p className="text-[#4cd8f7] mt-8 text-lg">My skillset includes:</p>
+    <div className="w-full px-4 mx-4">
+      <div
+        id="about"
+        className="container lg:flex w-full sm:mt-0 h-max mx-auto lg:w-11/12"
+      >
+        <div className="bg-gray-950 p-8 mx-4 lg:w-2/6 md:w-10/12 sm:w-11/12 sm:mx-4 hover:scale-105 duration-200 rounded-lg">
+          <h1 className="w-full text-4xl text-[#cce7f6] font-semibold">
+            <span className="text-[#4cd8f7] font-mono text-2xl">02.</span> About
+            Me
+          </h1>
+          <p className="w-full text-gray-300 mt-5 text-xl">
+            I'm Mrityunjay Shrivastava, a final year B.Tech student in
+            Information Technology at Manipal University Jaipur (2020-2024).
+            Passionate about web development since my second year of
+            engineering, I've honed my skills and stayed updated with the latest
+            trends in technology.
+          </p>
+          <p className="w-full text-gray-300 mt-5 text-xl">
+            With hands-on experience from internships at Hughes Systique
+            Corporation and Tangle by Raspberry Mule, I've developed full-stack
+            applications using frameworks like SpringBoot, React.js, and the
+            MERN stack. My technical toolkit includes Java, TypeScript,
+            JavaScript, SQL, and proficiency in databases like MySQL, MongoDB,
+            Firebase, and Supabase. Additionally, I'm skilled in Git, GitHub,
+            Docker, and various design and productivity tools. Driven by a love
+            for creating innovative solutions.
+          </p>
+        </div>
+        <div className="lg:w-4/6 sm:w-full mx-auto my-3">
+          <SkillCards
+            ValueLogo={LanguagesLogos}
+            Value={Languages}
+            Heading={"Languages"}
+            Spacing={"w-full lg:py-3 lg:mt-0"}
+          />
+          <SkillCards
+            ValueLogo={FrameworksLogos}
+            Value={Frameworks}
+            Heading={"Frameworks/Libraries"}
+            Spacing={"w-full lg:py-3 lg:mt-4"}
+          />
+        </div>
       </div>
-
-      <div className="lg:w-9/10 mx-auto px-10 flex flex-wrap">
-        <div className="lg:w-1/5 sm:w-1/2 w-full lg:py-3 mt-2 lg:mt-0">
-          <ul className="text-[#4cd8f7] mt-5 text-base font-mono leading-10">
-            <li className="text-white">Languages</li>
-            {SkillSet[0].Languages.map((skill, index) => (
-              <li key={index} className="flex">
-                {skill}
-              </li>
-            ))}
-          </ul>
+      <div className="container mx-auto sm:w-full">
+        <div className="lg:flex xl:flex mx-auto my-3 h-3/4 md:w-full">
+          <SkillCards
+            ValueLogo={CICDLogos}
+            Valueof={CICDLogos}
+            Value={CICD}
+            Heading={"CI/CD"}
+            Spacing={"  w-full lg:py-3 "}
+          />
+          <SkillCards
+            ValueLogo={UILogos}
+            Valueof={UILogos}
+            Value={UI}
+            Heading={"UI"}
+            Spacing={" w-full lg:py-3"}
+          />
         </div>
-        <div className="lg:w-1/5 sm:w-1/2 w-full  lg:py-3 mt-6 lg:mt-0">
-          <ul className="text-[#4cd8f7] mt-5 text-base font-mono leading-10">
-            <li className="text-white">Frameworks/Libraries</li>
-            {SkillSet[0]["Frameworks/Libraries"].map((skill, index) => (
-              <li key={index}>{skill}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="lg:w-1/5 sm:w-1/2 w-full  lg:py-3 mt-6 lg:mt-0">
-          <ul className="text-[#4cd8f7] mt-5 text-base font-mono leading-10">
-            <li className="text-white">Database</li>
-            {SkillSet[0].Database.map((skill, index) => (
-              <li key={index}>{skill}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="lg:w-1/5 sm:w-1/2 w-full  lg:py-3 mt-6 lg:mt-0">
-          <ul className="text-[#4cd8f7] mt-5 text-base font-mono leading-10">
-            <li className="text-white">CI/CD</li>
-            {SkillSet[0]["CI/CD"].map((skill, index) => (
-              <li key={index}>{skill}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="lg:w-1/5 sm:w-1/2 w-full lg:pr-5 lg:py-3 mt-6 lg:mt-0">
-          <ul className="text-[#4cd8f7] mt-5 text-base font-mono leading-10">
-            <li className="text-white">UI</li>
-            {SkillSet[0]["UI"].map((skill, index) => (
-              <li key={index}>{skill}</li>
-            ))}
-          </ul>
-        </div>
+        <SkillCards
+          ValueLogo={DatabaseLogos}
+          Valueof={DatabaseLogos}
+          Value={Database}
+          Heading={"Database"}
+          Spacing={" container mx-auto h-1/2 w-full lg:py-3 lg:px-24"}
+        />
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import CopyButton from "./CopyButton";
 export default function HeroSection() {
   useEffect(() => {
     function handleScroll() {
-      if (window.innerWidth >= 1024) { // 1024px is the breakpoint for laptops and bigger screens in Tailwind CSS
+      if (window.innerWidth >= 1280) { // 1024px is the breakpoint for laptops and bigger screens in Tailwind CSS
         const distance = window.scrollY;
         // Move the mask div to the right and out of the screen on scroll
         document.getElementById("mask").style.transform = `translateX(${distance * 1.9}px)`;
@@ -104,7 +104,7 @@ export default function HeroSection() {
             </div>
             <div className="flex mt-4 items-center pb-5 border-b-2 border-black mb-5"></div>
           </div>
-          <div id="mask" className="relative my-4 invisible z-50 lg:visible lg:w-80 lg:h-80 ml-[16%] mt-10">
+          <div id="mask" className="relative my-4 invisible z-50 xl:visible lg:w-80 lg:h-80 ml-[16%] mt-10">
             <img src={mjximg} className="rounded-full w-80 h-80 absolute inset-0" />
             <div className="rounded-full w-full h-full border-8 border-red-500 border-opacity-75 absolute top-0 left-0 animate-pulse"></div>
             <div className="rounded-full w-full h-full border-8 border-blue-500 border-opacity-75 absolute top-0 left-0 animate-pulse"></div>

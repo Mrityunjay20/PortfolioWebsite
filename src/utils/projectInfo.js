@@ -7,16 +7,42 @@ import sigbedImg from '../assets/projectss/sigbed.png'
 import mailflowImg from '../assets/projectss/mailflow.png'
 import portfolioImg from '../assets/projectss/portfolio.png'
 
+import JavaLogo from '../assets/skillLogos/LanguagesLogos/java.svg'
+import JsLogo from '../assets/skillLogos/LanguagesLogos/js.svg'
+import SqlLogo from '../assets/skillLogos/LanguagesLogos/sql.svg'
+import TsLogo from '../assets/skillLogos/LanguagesLogos/ts.svg'
+import ExpressLogo from '../assets/skillLogos/FrameworksLogos/express.png'
+import ReactLogo from '../assets/skillLogos/FrameworksLogos/react.svg'
+import NextLogo from '../assets/skillLogos/FrameworksLogos/next.svg'
+import SpringLogo from '../assets/skillLogos/FrameworksLogos/spring.svg'
+import MySqlLogo from '../assets/skillLogos/DBLogos/mysql.svg'
+import PostGreSQLLogo from '../assets/skillLogos/DBLogos/postgres.svg'
+import MongodbLogo from '../assets/skillLogos/DBLogos/mongodb.svg'
+import FirebaseLogo from '../assets/skillLogos/DBLogos/firebase.svg'
+import DockerLogo from "../assets/skillLogos/CI/dockerLogo.svg"
+import GitLogo from "../assets/skillLogos/CI/gitLogo.svg"
+import GithubLogo from "../assets/skillLogos/CI/githubLogo.svg"
+import FigmaLogo from "../assets/skillLogos/UILogos/figmaLogo.svg"
+import TailwindLogo from "../assets/skillLogos/UILogos/tailwindLogo.svg"
+import ThreeLogo from "../assets/skillLogos/UILogos/threejsLogo.svg"
 
-export const SkillSet = [
-    {
-        "Languages": [`Java`, "TypeScript", "JavaScript", "SQL"],
-        "Frameworks/Libraries": ["Next.js", "React.js", "Express.js", "Spring Boot"],
-        "Database": ["MongoDB", "MySQL", "Firebase", "Supabase"],
-        "CI/CD": ["Git", "Github", "Docker"],
-        "UI":["3js", "Tailwind", "Figma"]
-    }
-];
+
+
+
+
+
+
+
+export const Languages= [`Java`, "TypeScript", "JavaScript", "SQL"];
+export const LanguagesLogos = [JavaLogo,TsLogo,JsLogo,SqlLogo];
+export const Frameworks= ["Next.js", "React.js", "Express.js", "Spring Boot"];
+export const FrameworksLogos=[NextLogo,ReactLogo,ExpressLogo,SpringLogo];
+export const Database= ["MongoDB", "MySQL", "PostGreSQL","Firebase"];
+export const DatabaseLogos=[MongodbLogo,MySqlLogo,PostGreSQLLogo,FirebaseLogo];
+export const CICD= ["Git", "Github", "Docker"];
+export const CICDLogos=[GitLogo,GithubLogo,DockerLogo];
+export const UI=["Figma", "Tailwind", "3js"];
+export const UILogos=[FigmaLogo,TailwindLogo,ThreeLogo];
 
 export const Experience= {
     "Hughes Systique Corporation (HSC)": {
