@@ -21,8 +21,7 @@ export default function AboutMe() {
       >
         <div className="bg-gray-950 p-8 mx-4 lg:w-2/6 md:w-10/12 sm:w-11/12 sm:mx-4 hover:scale-105 duration-200 rounded-lg">
           <h1 className="w-full text-4xl text-[#cce7f6] font-semibold">
-            <span className="text-[#4cd8f7] font-mono text-2xl">02.</span> About
-            Me
+             About Me
           </h1>
           <p className="w-full text-gray-300 mt-5 text-xl">
             I'm Mrityunjay Shrivastava, a final year B.Tech student in

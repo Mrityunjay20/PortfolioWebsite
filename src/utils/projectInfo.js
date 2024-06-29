@@ -19,12 +19,15 @@ import MySqlLogo from '../assets/skillLogos/DBLogos/mysql.svg'
 import PostGreSQLLogo from '../assets/skillLogos/DBLogos/postgres.svg'
 import MongodbLogo from '../assets/skillLogos/DBLogos/mongodb.svg'
 import FirebaseLogo from '../assets/skillLogos/DBLogos/firebase.svg'
+import SupabaseLogo from '../assets/skillLogos/DBLogos/supabase.svg'
+
 import DockerLogo from "../assets/skillLogos/CI/dockerLogo.svg"
 import GitLogo from "../assets/skillLogos/CI/gitLogo.svg"
 import GithubLogo from "../assets/skillLogos/CI/githubLogo.svg"
-import FigmaLogo from "../assets/skillLogos/UILogos/figmaLogo.svg"
+import GsapLogo from "../assets/skillLogos/UILogos/gsapLogo.svg"
 import TailwindLogo from "../assets/skillLogos/UILogos/tailwindLogo.svg"
 import ThreeLogo from "../assets/skillLogos/UILogos/threejsLogo.svg"
+
 
 
 
@@ -37,12 +40,12 @@ export const Languages= [`Java`, "TypeScript", "JavaScript", "SQL"];
 export const LanguagesLogos = [JavaLogo,TsLogo,JsLogo,SqlLogo];
 export const Frameworks= ["Next.js", "React.js", "Express.js", "Spring Boot"];
 export const FrameworksLogos=[NextLogo,ReactLogo,ExpressLogo,SpringLogo];
-export const Database= ["MongoDB", "MySQL", "PostGreSQL","Firebase"];
-export const DatabaseLogos=[MongodbLogo,MySqlLogo,PostGreSQLLogo,FirebaseLogo];
+export const Database= ["MongoDB", "MySQL", "PostGreSQL","Firebase", "Supabase"];
+export const DatabaseLogos=[MongodbLogo,MySqlLogo,PostGreSQLLogo,FirebaseLogo, SupabaseLogo];
 export const CICD= ["Git", "Github", "Docker"];
 export const CICDLogos=[GitLogo,GithubLogo,DockerLogo];
-export const UI=["Figma", "Tailwind", "3js"];
-export const UILogos=[FigmaLogo,TailwindLogo,ThreeLogo];
+export const UI=["GSAP","Tailwind", "3js"];
+export const UILogos=[GsapLogo,TailwindLogo,ThreeLogo];
 
 export const Experience= {
     "Hughes Systique Corporation (HSC)": {

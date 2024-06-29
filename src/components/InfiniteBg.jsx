@@ -3,7 +3,7 @@ import React from 'react';
 const BackgroundAnimation = () => {
   const listItems = Array.from({ length: 60 }, (_, index) => {
     const size = Math.floor(Math.random() * 60) + 6; // Random size between 6px and 60px
-    const delay = Math.random() * 101; // Random delay up to 202s
+    const delay = Math.random() * 50; // Random delay up to 202s
     const left = Math.random() * 100; // Random left position between 0% and 100%
 
     return (
