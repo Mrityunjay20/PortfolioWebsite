@@ -1,3 +1,7 @@
 body{
   background-color: black;
 }
+
+.top-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #FF9933; /* Custom color for top scrollbar */
+}
