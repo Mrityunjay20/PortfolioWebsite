@@ -66,15 +66,6 @@ export const Experience= {
         "Location": "Remote",
         "Technologies":["React.js","Tailwind CSS","Node.js","Express.js","MongoDB"]
     },
-    "Random": {
-        "logo":tangleimg,
-        "Role":"SDE Intern",
-        "Type":"SDE",
-        "StartDate":"Oct 2022",
-        "EndDate":"May 2023",
-        "Location": "Remote",
-        "Technologies":["React.js","Tailwind CSS","Node.js","Express.js","MongoDB"]
-    },
 }
 
 export const VolExperience= {
