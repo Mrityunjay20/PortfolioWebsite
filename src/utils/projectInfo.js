@@ -6,6 +6,7 @@ import tictactoeImg from '../assets/projectss/tictactoe.png'
 import sigbedImg from '../assets/projectss/sigbed.png'
 import mailflowImg from '../assets/projectss/mailflow.png'
 import portfolioImg from '../assets/projectss/portfolio.png'
+import indiestori from '../assets/projectss/indiestori.png'
 
 import JavaLogo from '../assets/skillLogos/LanguagesLogos/java.svg'
 import JsLogo from '../assets/skillLogos/LanguagesLogos/js.svg'
@@ -90,6 +91,12 @@ export const VolExperience= {
 }
 
 export const ProjectInfo ={
+    "IndieStori (Freelancing Project)":{
+        'Desc':'IndieStori is a comprehensive e-commerce platform dedicated to offering authentic spices sourced from the heart of the Himalayas. I developed this website along with its admin dashboard from start to finish for my client, utilizing React, Tailwind CSS, and Material-UI for the frontend. The backend is powered by Nest.js, MySQL, and Firebase for media hosting. The site is hosted on a private VPS with an Nginx server and is fully operational.',
+        'GithubLink':"false",
+        'websiteLink':'https://indiestori.com/',
+        'imglink':indiestori
+    },
     "Portfolio Website":{
         'Desc':'My portfolio website, a dynamic and interactive showcase of my professional journey, skills, and projects. Built using React, React Router DOM, Tailwind CSS, Vite, Three.js, and React Three Fiber, this website also features rich interactions with 3D models. The integration of Three.js allows for immersive 3D model interactions, adding a unique visual depth and interactivity that enhances the overall user experience.',
         'GithubLink':'https://github.com/Mrityunjay20/portfolio',
@@ -99,9 +106,10 @@ export const ProjectInfo ={
     "MailFlow":{
         'Desc':'MailFlow is an AI tool designed for managing emails, built with Google PaLM, Google Cloud Platform, MongoDB, and express.js. It generates and paraphrases professional emails from minimal input, saves them, and can send or schedule emails directly through Gmail. (work in progress)',
         'GithubLink':'https://github.com/Mrityunjay20/mailflow-frontend',
-        'websiteLink':'#',
+        'websiteLink':'false',
         'imglink':mailflowImg
     },
+    
     "MUJ ACM SIGBED":{
         'Desc':'SIGBED (Special Interest Group on Embedded Systems) is a global organization that focuses on research and development in embedded systems. This website serves as a platform to showcase the activities, events, and achievements of the SIGBED MUJ Student Chapter. It is built using NEXT.js, supabase, tailwind and Material-Tailwind. This website also won National ACM website Award 2023',
         'GithubLink':'https://github.com/Mrityunjay20/sigbed',
