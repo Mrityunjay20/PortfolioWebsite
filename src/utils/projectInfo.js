@@ -92,7 +92,7 @@ export const VolExperience= {
 
 export const ProjectInfo ={
     "IndieStori (Freelancing Project)":{
-        'Desc':'IndieStori is a comprehensive e-commerce platform dedicated to offering authentic spices sourced from the heart of the Himalayas. I developed this website along with its admin dashboard from start to finish for my client, utilizing React, Tailwind CSS, and Material-UI for the frontend. The backend is powered by Nest.js, MySQL, and Firebase for media hosting. The site is hosted on a private VPS with an Nginx server and is fully operational.',
+        'Desc':'IndieStori is a comprehensive e-commerce platform dedicated to offering authentic spices sourced from the heart of the Himalayas. I developed this website along with its admin dashboard from start to finish for my client, utilizing React, Tailwind CSS, and Material-UI for the frontend. The backend is powered by Nest.js, MySQL, and Firebase for media hosting. The site is hosted on a VPS with an Nginx server and is fully operational.',
         'GithubLink':"false",
         'websiteLink':'https://indiestori.com/',
         'imglink':indiestori
