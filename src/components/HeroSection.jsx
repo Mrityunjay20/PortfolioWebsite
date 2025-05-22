@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import mjximg from "../assets/mjx.png";
 import { emaillink, githubLink, linkedinLink, twitterLink } from "../utils/links";
 import CopyButton from "./CopyButton";
-import BackgroundImg from "../assets/bgimg.webp";
 
 export default function HeroSection() {
   useEffect(() => {
@@ -37,7 +36,7 @@ export default function HeroSection() {
               Hey, my name is
             </h1>{" "}
             <br />
-              <h1 className="text-[#cce7f6] w-max sm:ml-3 lg:ml-0 text-4xl md:text-5xl lg:text-6xl pt-5 title-font font-semibold hover:text-[#76BEF8] duration-300 mb-[-10] ">
+              <h1 className="text-white w-max sm:ml-3 lg:ml-0 text-4xl md:text-5xl lg:text-6xl pt-5 title-font font-semibold hover:text-[#76BEF8] duration-300 mb-[-10] ">
                 Mrityunjay<br className="block md:hidden"/> Shrivastava
               </h1>
             <br />
@@ -46,11 +45,11 @@ export default function HeroSection() {
               <span className="text-[#76BEF8]">(2020-24)</span>
             </p>
             <p className="text-xl my-4">
-              <span className="text-[#76BEF8]">Occupation:</span> Associate Engineer,<br className="block md:hidden"/> Hughes Systique Corporation
+              <span className="text-[#76BEF8]">Works as:</span> Associate Engineer,<br className="block md:hidden"/> Hughes Systique Corporation
             </p>
-            <p className="text-xl my-4">
+            {/* <p className="text-xl my-4">
               <span className="text-[#76BEF8]">Interests:</span> Web, Cloud, JS
-            </p>
+            </p> */}
             <div className="text-xl hidden md:block  w-1 sm:w-2/3">
               <span className="text-[#76BEF8] mr-4">Socials: </span>
               <div className="inline flex mt-4">

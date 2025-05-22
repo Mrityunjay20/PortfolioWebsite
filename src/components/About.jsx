@@ -14,72 +14,156 @@ import SkillCards from "./SkillCards";
 
 export default function AboutMe() {
   return (
-    <div className="w-full px-4 mx-4">
-      <div
-        id="about"
-        className="container lg:flex w-full sm:mt-0 h-max mx-auto lg:w-11/12"
-      >
-        <div className="bg-zinc-950 p-8 mx-4 lg:w-2/6 md:w-10/12 sm:w-11/12 sm:mx-4 hover:scale-105 duration-200 rounded-lg">
-          <h1 className="w-full text-4xl text-[#cce7f6] font-semibold">
-             About Me
+    <div className="w-full bg-black">
+      <div className="max-w-7xl mx-auto px-4 py-12 space-y-10">
+        {/* About Me & Side Quests */}
+        <div className="flex flex-col lg:flex-row gap-10">
+          {/* About Me */}
+          <div className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-3xl w-full lg:w-2/5 shadow-xl border border-blue-100 transition-transform duration-300 hover:scale-[1.02]">
+            <h1 className="text-4xl font-extrabold text-zinc-950 mb-5">
+              About Me
+            </h1>
+            <p className="text-gray-800 text-lg leading-relaxed text-justify mb-4">
+              I'm Mrityunjay Shrivastava, a builder at heart, currently crafting
+              secure software solutions at Hughes Systique Corporation. My
+              journey into tech wasn't just about learning to code; it was about
+              discovering how ideas come to life through logic, creativity, and
+              relentless iteration.
+            </p>
+            <p className="text-gray-800 text-lg leading-relaxed text-justify mb-4">
+              I’ve always believed that the best engineering isn't just about
+              writing clever code, it's about solving meaningful problems,
+              communicating clearly, and being deeply curious. Whether I'm
+              leading a team, organizing an event, or helping local businesses
+              launch their online presence, I bring a strong sense of ownership
+              and empathy to everything I do.
+            </p>
+            <p className="text-gray-800 text-lg leading-relaxed text-justify">
+              I’m not here just to write code, I’m here to build things that
+              matter. If I can learn something new, collaborate with thoughtful
+              people, or make someone’s life easier, that’s a good day’s work.
+            </p>
+          </div>
+
+          {/* Side Quests */}
+          <div className="bg-white p-6 sm:p-8 rounded-3xl w-full shadow-xl border border-zinc-100">
+            <h1 className="text-4xl font-extrabold text-zinc-950 mb-5">
+              My Side Quests
+            </h1>
+            <p className="text-zinc-700 text-lg leading-relaxed mb-8">
+              I have always loved working on cool projects, 
+              <br />
+              Here are some highlights from my journey 🪃✨
+            </p>
+
+            {[
+              {
+                title: "📑 KuKi Solutions (one of my best experiences yet!)",
+                href: "https://kuki.co.in/",
+                desc: "🛠️  KuKi Solutions is one of the India’s pioneering ESG-AI compliance tech startups. I collaborated closely with all CXO's, ESG consultants and ML engineers to develop an end-to-end automation platform for ESG reporting. As a developer, I led the software design and development of the KuKi dashboard, ensuring a seamless, scalable, and impactful user experience.",
+              },
+              {
+                title: "🌐 Indiestori.com",
+                href: "https://indiestori.com",
+                desc: "🚀 Led the complete digital transformation of Indiestori by developing an end-to-end e-commerce platform. Automated shipping, email marketing, order tracking, and other core operations for smoother business workflows.",
+              },
+              // {
+              //   title: "🛍️ houseofojal.in",
+              //   href: "https://houseofojal.in/",
+              //   desc: "🎨 Launched an online storefront for traditional clothing to help the business go global. Integrated inventory tracking, secure payments, and analytics for long-term business sustainability.",
+              // },
+              {
+                title: "🧑‍💻 Iniseria",
+                href: "#",
+                desc: "🛠️ Started a web studio during my 3rd and 4th year of engineering. Delivered 12+ client projects, including 4 international clients before handing the reins over to my juniors to keep the momentum going.",
+              },
+              {
+                title: "🤖 MUJ SIGBED Chapter (Vice Chairperson)",
+                href: "https://sigbed.vercel.app",
+                desc: "📡 Organized some of Jaipur’s largest IoT events Sigfest and Autobots at Manipal University, attracting 800+ participants. Led and coordinated a team of 60+ members. Designed and developed the official website, which won the ACM National Award for Best Chapter Website 🏆.",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="group p-5 bg-gray-50 rounded-xl border border-gray-200 shadow-sm mb-6 hover:bg-blue-50 transition-colors"
+              >
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 group-hover:text-blue-800 transition-colors font-semibold text-lg"
+                >
+                  {item.title}
+                </a>
+                <p className="text-zinc-800 text-base mt-2 leading-relaxed text-justify">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Patent Section */}
+        <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-zinc-100">
+          <h1 className="text-4xl font-extrabold text-zinc-950 mb-5">
+            My Patent 
           </h1>
-          <p className="w-full text-gray-300 mt-5 text-xl text-justify">
-            I'm Mrityunjay Shrivastava, a final year B.Tech student in
-            Information Technology at Manipal University Jaipur (2020-2024).
-            Passionate about web development since my second year of
-            engineering, I've honed my skills and stayed updated with the latest
-            trends in technology.
-          </p>
-          <p className="w-full text-gray-300 mt-5 text-xl text-justify">
-            With hands-on experience at Hughes Systique
-            Corporation and Tangle, I've developed full-stack
-            applications using frameworks like SpringBoot, React.js, and the
-            MERN stack. My technical toolkit includes Java, TypeScript,
-            JavaScript, SQL, and proficiency in databases like MySQL, MongoDB,
-            Firebase, and Supabase. Additionally, I'm skilled in Git, GitHub,
-            Docker, and various design and productivity tools. Driven by a love
-            for creating innovative solutions.
+          <p className="text-zinc-700 text-lg leading-relaxed">
+            In 2023, I was granted a patent titled: <br />
+            <span className="font-semibold text-zinc-900">
+              A Blockchain based device and method to enable E-Health system
+              for Combating Drug Abuse in India: <br/> Publication Number: 47/2023
+            </span>
+            <br />A blockchain-powered platform to securely generate, verify,
+            and trace electronic prescriptions, addressing India’s prescription
+            drug abuse epidemic. Enables authorized healthcare providers to
+            issue tamper-proof prescriptions with cryptographic signatures and
+            unique identifiers, ensuring end-to-end traceability in the supply
+            chain. Tackles systemic challenges like fragmented healthcare and
+            weak regulations by creating an immutable audit trail for
+            prescriptions, reducing fraud and misuse.
           </p>
         </div>
-        <div className="lg:w-4/6 sm:w-full mx-auto my-3">
+
+        {/* SkillCards Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <SkillCards
             ValueLogo={LanguagesLogos}
             Value={Languages}
             Heading={"Languages"}
-            Spacing={"w-full lg:py-3 lg:mt-0"}
+            Spacing="w-full"
           />
           <SkillCards
             ValueLogo={FrameworksLogos}
             Value={Frameworks}
             Heading={"Frameworks/Libraries"}
-            Spacing={"w-full lg:py-3 lg:mt-4"}
+            Spacing="w-full"
           />
-        </div>
-      </div>
-      <div className="container mx-auto sm:w-full">
-        <div className="lg:flex xl:flex mx-auto my-3 h-3/4 md:w-full">
           <SkillCards
             ValueLogo={CICDLogos}
             Valueof={CICDLogos}
             Value={CICD}
             Heading={"CI/CD"}
-            Spacing={"  w-full lg:py-3 "}
+            Spacing="w-full"
           />
           <SkillCards
             ValueLogo={UILogos}
             Valueof={UILogos}
             Value={UI}
             Heading={"UI"}
-            Spacing={" w-full lg:py-3"}
+            Spacing="w-full"
           />
         </div>
-        <SkillCards
-          ValueLogo={DatabaseLogos}
-          Valueof={DatabaseLogos}
-          Value={Database}
-          Heading={"Database"}
-          Spacing={" container mx-auto h-1/2 w-full lg:py-3 lg:px-24"}
-        />
+
+        <div className="mt-6">
+          <SkillCards
+            ValueLogo={DatabaseLogos}
+            Valueof={DatabaseLogos}
+            Value={Database}
+            Heading={"Database"}
+            Spacing="w-full"
+          />
+        </div>
       </div>
     </div>
   );
