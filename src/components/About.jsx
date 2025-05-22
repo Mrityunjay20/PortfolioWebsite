@@ -48,7 +48,7 @@ export default function AboutMe() {
           {/* Side Quests */}
           <div className="bg-white p-6 sm:p-8 rounded-3xl w-full shadow-xl border border-zinc-100">
             <h1 className="text-4xl font-extrabold text-zinc-950 mb-5">
-              My Side Quests
+              My Soulful Quests
             </h1>
             <p className="text-zinc-700 text-lg leading-relaxed mb-8">
               I have always loved working on cool projects, 
