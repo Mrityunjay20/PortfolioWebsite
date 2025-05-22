@@ -49,7 +49,16 @@ export const UI=["GSAP","Tailwind", "3js"];
 export const UILogos=[GsapLogo,TailwindLogo,ThreeLogo];
 
 export const Experience= {
-    "Hughes Systique Corporation (HSC)": {
+     "Hughes Systique Corporation (HSC)": {
+        "logo":hscimg,
+        "Role":"Associate Software Engineer",
+        "Type":"Internship",
+        "StartDate":"Jan 2024",
+        "EndDate":"Present",
+        "Location": "Gurgaon",
+        "Technologies":["Golang","Node.js","React.js","PostgreSQL"]
+    },
+    "Hughes Systique Corporation (HSC) ": {
         "logo":hscimg,
         "Role":"Software Engineer Intern",
         "Type":"Internship",

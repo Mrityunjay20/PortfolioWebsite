@@ -23,16 +23,16 @@ export default function AboutMe() {
           <h1 className="w-full text-4xl text-[#cce7f6] font-semibold">
              About Me
           </h1>
-          <p className="w-full text-gray-300 mt-5 text-xl">
+          <p className="w-full text-gray-300 mt-5 text-xl text-justify">
             I'm Mrityunjay Shrivastava, a final year B.Tech student in
             Information Technology at Manipal University Jaipur (2020-2024).
             Passionate about web development since my second year of
             engineering, I've honed my skills and stayed updated with the latest
             trends in technology.
           </p>
-          <p className="w-full text-gray-300 mt-5 text-xl">
-            With hands-on experience from internships at Hughes Systique
-            Corporation and Tangle by Raspberry Mule, I've developed full-stack
+          <p className="w-full text-gray-300 mt-5 text-xl text-justify">
+            With hands-on experience at Hughes Systique
+            Corporation and Tangle, I've developed full-stack
             applications using frameworks like SpringBoot, React.js, and the
             MERN stack. My technical toolkit includes Java, TypeScript,
             JavaScript, SQL, and proficiency in databases like MySQL, MongoDB,
