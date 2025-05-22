@@ -52,8 +52,8 @@ export const Experience= {
      "Hughes Systique Corporation (HSC)": {
         "logo":hscimg,
         "Role":"Associate Software Engineer",
-        "Type":"Internship",
-        "StartDate":"Jan 2024",
+        "Type":"Fulltime",
+        "StartDate":"Jan 2025",
         "EndDate":"Present",
         "Location": "Gurgaon",
         "Technologies":["Golang","Node.js","React.js","PostgreSQL"]
