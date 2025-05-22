@@ -46,7 +46,7 @@ export default function HeroSection() {
               <span className="text-[#76BEF8]">(2020-24)</span>
             </p>
             <p className="text-xl my-4">
-              <span className="text-[#76BEF8]">Occupation:</span> SDE Intern,<br className="block md:hidden"/> Hughes Systique Corporation
+              <span className="text-[#76BEF8]">Occupation:</span> Associate Engineer,<br className="block md:hidden"/> Hughes Systique Corporation
             </p>
             <p className="text-xl my-4">
               <span className="text-[#76BEF8]">Interests:</span> Web, Cloud, JS

@@ -42,12 +42,13 @@ export default function NavBar() {
           >
             CONTACT ME
           </NavLink>
-          <NavLink
-            to={resumeLink}
+          <a
+            href={resumeLink}
+            target="_blank"
             className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-semibold rounded-md text-black hover:border-[#3765da] hover:text-[#3765da] transition-all duration-500"
           >
             RESUME
-          </NavLink>
+          </a>
         </nav>
       </div>
     </header>

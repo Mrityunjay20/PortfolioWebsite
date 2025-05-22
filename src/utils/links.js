@@ -1,4 +1,4 @@
-export const resumeLink="https://drive.google.com/file/d/1I6lqPkMYIClFvKPLzxUetly5o8YDgYSI/view?usp=sharing"
+export const resumeLink="https://drive.google.com/file/d/1aI5UvxZ3P37gaIEvFRm5E0nGO90GRV-q/view?usp=sharing"
 export const twitterLink="https://twitter.com/mjxshrivastava"
 export const linkedinLink="https://www.linkedin.com/in/mrityunjay-shrivastava/"
 export const githubLink="https://github.com/Mrityunjay20"
