@@ -60,7 +60,7 @@ export default function AboutMe() {
               {
                 title: "📑 KuKi Solutions (one of my best experiences yet!)",
                 href: "https://kuki.co.in/",
-                desc: "🛠️  KuKi Solutions is one of the India’s pioneering ESG-AI compliance tech startups. I collaborated closely with all CXO's, ESG consultants and ML engineers to develop an end-to-end automation platform for ESG reporting. As a developer, I led the software design and development of the KuKi dashboard, ensuring a seamless, scalable, and impactful user experience.",
+                desc: "🛠️  KuKi Solutions is one of the India’s pioneering ESG-AI compliance tech startups. I collaborated closely with all CXO's, ESG consultants and ML engineers to develop an end-to-end automation platform for ESG reporting. As a developer, I led the software design and development of KuKi's features, ensuring a seamless, scalable, and impactful user experience.",
               },
               {
                 title: "🌐 Indiestori.com",
