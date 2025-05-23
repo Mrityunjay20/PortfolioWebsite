@@ -46,7 +46,7 @@ export default function AboutMe() {
           </div>
 
           {/* Side Quests */}
-          <div className="bg-white p-6 sm:p-8 rounded-3xl w-full shadow-xl border border-zinc-100">
+          <div className="bg-gradient-to-br from-white to-blue-50 p-6 sm:p-8 rounded-3xl w-full shadow-xl border border-zinc-100">
             <h1 className="text-4xl font-extrabold text-zinc-950 mb-5">
               My Soulful Quests
             </h1>
@@ -60,7 +60,7 @@ export default function AboutMe() {
               {
                 title: "📑 KuKi Solutions (one of my best experiences yet!)",
                 href: "https://kuki.co.in/",
-                desc: "🛠️  KuKi Solutions is one of the India’s pioneering ESG-AI compliance tech startups. I collaborated closely with all CXO's, ESG consultants and ML engineers to develop an end-to-end automation platform for ESG reporting. As a developer, I led the software design and development of KuKi's features, ensuring a seamless, scalable, and impactful user experience.",
+                desc: "🛠️  KuKi Solutions is one of the India’s pioneering ESG-AI compliance tech startups. I collaborated closely with all CXO's, ESG consultants and ML engineers to develop an end-to-end automation platform for ESG reporting. As a developer, I led the software design and development of KuKi's, ensuring a seamless, scalable, and impactful user experience.",
               },
               {
                 title: "🌐 Indiestori.com",
@@ -85,7 +85,7 @@ export default function AboutMe() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="group p-5 bg-gray-50 rounded-xl border border-gray-200 shadow-sm mb-6 hover:bg-blue-50 transition-colors"
+                className="group p-5 bg-gray-50 rounded-xl border border-gray-200 shadow-sm mb-6 hover:bg-sky-50 transition-colors"
               >
                 <a
                   href={item.href}
@@ -104,7 +104,7 @@ export default function AboutMe() {
         </div>
 
         {/* Patent Section */}
-        <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-zinc-100">
+        <div className="bg-gradient-to-b from-white to-blue-100 rounded-3xl p-6 sm:p-8 shadow-xl border border-zinc-100">
           <h1 className="text-4xl font-extrabold text-zinc-950 mb-5">
             My Patent 
           </h1>

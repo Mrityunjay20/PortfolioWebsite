@@ -10,7 +10,7 @@ import indiestori from '../assets/projectss/indiestori.png'
 
 import JavaLogo from '../assets/skillLogos/LanguagesLogos/java.svg'
 import JsLogo from '../assets/skillLogos/LanguagesLogos/js.svg'
-import SqlLogo from '../assets/skillLogos/LanguagesLogos/sql.svg'
+import golangLogo from '../assets/skillLogos/LanguagesLogos/golang.png'
 import TsLogo from '../assets/skillLogos/LanguagesLogos/ts.svg'
 import ExpressLogo from '../assets/skillLogos/FrameworksLogos/express.png'
 import ReactLogo from '../assets/skillLogos/FrameworksLogos/react.svg'
@@ -37,8 +37,8 @@ import ThreeLogo from "../assets/skillLogos/UILogos/threejsLogo.svg"
 
 
 
-export const Languages= [`Java`, "TypeScript", "JavaScript", "SQL"];
-export const LanguagesLogos = [JavaLogo,TsLogo,JsLogo,SqlLogo];
+export const Languages= [`Golang`, "TypeScript", "JavaScript", "Java"];
+export const LanguagesLogos = [golangLogo,TsLogo,JsLogo,JavaLogo];
 export const Frameworks= ["Next.js", "React.js", "Express.js", "Spring Boot"];
 export const FrameworksLogos=[NextLogo,ReactLogo,ExpressLogo,SpringLogo];
 export const Database= ["MongoDB", "MySQL", "PostGreSQL","Firebase", "Supabase"];
