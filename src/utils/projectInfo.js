@@ -7,6 +7,7 @@ import sigbedImg from '../assets/projectss/sigbed.png'
 import mailflowImg from '../assets/projectss/mailflow.png'
 import portfolioImg from '../assets/projectss/portfolio.png'
 import indiestori from '../assets/projectss/indiestori.png'
+import veronica from '../assets/projectss/veronica.png'
 
 import JavaLogo from '../assets/skillLogos/LanguagesLogos/java.svg'
 import JsLogo from '../assets/skillLogos/LanguagesLogos/js.svg'
@@ -100,6 +101,12 @@ export const VolExperience= {
 }
 
 export const ProjectInfo ={
+    "Veronica, Personal Productivity Dashboard":{
+        'Desc':'Veronica is a full-stack personal productivity and management application designed to act as a "second brain." It provides a centralized dashboard to track daily tasks, habits, mood, and finances, helping users organize their life and gain insights into their personal data. The application features a modern, responsive user interface built with Next.js and Tailwind CSS, and it leverages Supabase for secure user authentication and real-time data persistence.',
+        'GithubLink':"false",
+        'websiteLink':'https://veronica.mjxsh.in/',
+        'imglink':veronica
+    },
     "IndieStori (Freelancing Project)":{
         'Desc':'IndieStori is a comprehensive e-commerce platform dedicated to offering authentic spices sourced from the heart of the Himalayas. I developed this website along with its admin dashboard from start to finish for my client, utilizing React, Tailwind CSS, and Material-UI for the frontend. The backend is powered by Nest.js, MySQL, and Firebase for media hosting. The site is hosted on a VPS with an Nginx server and is fully operational.',
         'GithubLink':"false",
