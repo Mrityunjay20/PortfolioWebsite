@@ -1,58 +1,35 @@
 import { NavLink } from "react-router-dom";
 import { resumeLink } from "../utils/links";
 
+const navItems = [
+  { label: "Home", to: "/" },
+  { label: "Experience", to: "/experience" },
+  { label: "Projects", to: "/projects" },
+];
+
 export default function NavBar() {
-
-  const scrollToComponent = (componentId) => {
-    const component = document.getElementById(componentId);
-    if (component) {
-      component.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <header
-      id="navbar"
-      className="text-gray-600 z-50 bottom-30 body-font snap-center transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105 duration-300"
-    >
-      <div className="mx-auto z-10 flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <nav className="md:ml-auto md:mr-auto rounded-xl bg-gray-200 transition ease-in hover:delay-200 py-2 px-5 mt-8 flex flex-wrap items-center text-base justify-center">
+    <header className="site-header">
+      <NavLink className="brand-mark" to="/" aria-label="Mrityunjay Shrivastava — home">
+        <span>MJ</span>
+        <span className="brand-pulse" aria-hidden="true" />
+      </NavLink>
+
+      <nav className="main-nav" aria-label="Primary navigation">
+        {navItems.map((item) => (
           <NavLink
-            exact="true"
-            to="/"
-            className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-semibold rounded-md hover:border-[#3765da] hover:text-[#3765da] text-black transition-all duration-500"
+            key={item.to}
+            to={item.to}
+            className={({ isActive }) => `nav-link${isActive ? " active" : ""}`}
           >
-            HOME
+            {item.label}
           </NavLink>
-          <NavLink
-            to="/experience"
-            className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-semibold rounded-md text-black hover:border-[#3765da] hover:text-[#3765da] transition-all duration-500"
-          >
-            EXPERIENCE
-          </NavLink>
-          <NavLink
-            to="/projects"
-            className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-semibold rounded-md text-black hover:border-[#3765da] hover:text-[#3765da] transition-all duration-500"
-          >
-            PROJECTS
-          </NavLink>
-          <NavLink
-            onClick={() => scrollToComponent("footer")}
-            className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-semibold rounded-md text-black hover:border-[#3765da] hover:text-[#3765da] transition-all duration-500"
-          >
-            CONTACT ME
-          </NavLink>
-          <a
-            href={resumeLink}
-            target="_blank"
-            className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-semibold rounded-md text-black hover:border-[#3765da] hover:text-[#3765da] transition-all duration-500"
-          >
-            RESUME
-          </a>
-        </nav>
-      </div>
+        ))}
+      </nav>
+
+      <a className="availability-link" href={resumeLink} target="_blank" rel="noreferrer">
+        Résumé <span aria-hidden="true">↗</span>
+      </a>
     </header>
   );
 }
-
-

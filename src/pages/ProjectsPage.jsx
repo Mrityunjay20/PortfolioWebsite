@@ -1,29 +1,18 @@
-import ProjectCard from "../components/ProjectCard";
-import ProjectHeading from "../components/ProjectHeading";
-import { ProjectInfo } from "../utils/projectInfo";
+import ContactMe from "../components/ContactMe";
+import FeaturedWork from "../components/FeaturedWork";
+import GithubProjects from "../components/GithubProjects";
 
 export default function ProjectsPage() {
   return (
-    <>
-      <ProjectHeading />
-      <section className="text-gray-200 w-full body-font">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-wrap -m-4">
-            {Object.entries(ProjectInfo).map(
-              ([projectName, projectDetails]) => (
-                <ProjectCard
-                  key={projectName}
-                  projectImg={projectDetails.imglink}
-                  projectName={projectName}
-                  projectDesc={projectDetails.Desc}
-                  githubLink={projectDetails.GithubLink}
-                  websiteLink={projectDetails.websiteLink}
-                />
-              )
-            )}
-          </div>
-        </div>
-      </section>
-    </>
+    <main className="page-shell projects-page">
+      <header className="page-intro">
+        <p className="section-kicker">Selected projects · Digital products and experiments</p>
+        <h1>Work that earns its place in the world.</h1>
+        <p>Client platforms, community products, and open-source explorations — each shaped around a real need.</p>
+      </header>
+      <FeaturedWork />
+      <GithubProjects />
+      <ContactMe />
+    </main>
   );
 }

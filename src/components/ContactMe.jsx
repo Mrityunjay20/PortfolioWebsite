@@ -1,32 +1,20 @@
+import { githubLink, linkedinLink } from "../utils/links";
+
 export default function ContactMe() {
   return (
-    <section id="contact" className="text-gray-400 body-font relative">
-      <div className="container px-5 py-24 mx-auto">
-        <div className="flex flex-col text-center w-full mb-12">
-          <p className="text-base font-mono text-[#4cd8f7] ">
-            03. What's next?
-          </p>
-          <h1 className="sm:text-[4vw]] text-[4vw] font-semibold title-font mb-4 text-[#ccd6f6]">
-            Get In Touch
-          </h1>
-          <p className="mx-auto text-center w-2/3 text-gray-200">
-          Looking to connect and collaborate? Whether you have a project idea, a question, or just want to say hello, I'd love to hear from you! Drop me a message and let's start the conversation.
-          <br/><span className="text-[#4cd8f7]">( I prefer LinkedIn )</span>
-          </p>
-        </div>
-        <div className="mt-10 flex justify-center">
-          <div className="inline-flex rounded-md shadow transition-all mt-4 duration-500">
-            <a
-              href="mailto:mjxworks@gmail.com"
-              className="inline-flex items-center justify-center px-5 py-3 border text-base font-medium rounded-md border-[#41bfdc] text-white hover:border-white hover:text-[#41bfdc] transition-all duration-500"
-            >
-              Say Hello
-            </a>
-          </div>
-        </div>
-        
-
-        
+    <section className="contact-section" id="contact">
+      <div className="contact-orbit" aria-hidden="true"><i /><i /><i /></div>
+      <p className="section-kicker">Have an ambitious brief?</p>
+      <h2>Let’s make it feel inevitable.</h2>
+      <p>
+        I’m open to remote product engineering, applied AI work, and focused collaborations with teams anywhere in the world.
+      </p>
+      <a className="button button-primary contact-button" href="mailto:mjxworks@gmail.com">
+        mjxworks@gmail.com <span aria-hidden="true">↗</span>
+      </a>
+      <div className="contact-links">
+        <a href={linkedinLink} target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        <a href={githubLink} target="_blank" rel="noreferrer">GitHub ↗</a>
       </div>
     </section>
   );
