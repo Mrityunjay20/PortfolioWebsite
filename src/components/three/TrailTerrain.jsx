@@ -1,72 +1,140 @@
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Line, OrbitControls } from "@react-three/drei";
-import { useLayoutEffect, useRef } from "react";
+/* eslint-disable react/prop-types -- Internal components consume the checked-in mountain data schema. */
+import { Canvas, useThree } from "@react-three/fiber";
+import { Html, OrbitControls, Sky } from "@react-three/drei";
+import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
+import {
+  createMountainGeometry,
+  createRockTexture,
+  decodeElevations,
+  destinationPosition,
+} from "../../utils/mountainGeometry";
 
-const elevation = (x, y) => (
-  Math.sin(x * 0.9) * 0.28 +
-  Math.cos(y * 1.18) * 0.22 +
-  Math.sin((x + y) * 1.55) * 0.13 +
-  Math.exp(-((x - 1.9) ** 2 + (y + 0.4) ** 2) / 3.8) * 1.05 +
-  Math.exp(-((x + 2.2) ** 2 + (y - 0.9) ** 2) / 2.7) * 0.85
-);
+const elevationCache = new Map();
 
-function Terrain() {
-  const geometry = useRef();
-  const wireGeometry = useRef();
-  const group = useRef();
+function Landscape({ region, elevations, resetKey, view }) {
+  const controls = useRef();
+  const { camera, invalidate, size } = useThree();
+  const coarsePointer = useMemo(() => window.matchMedia("(pointer: coarse)").matches, []);
+  const geometry = useMemo(() => createMountainGeometry(elevations, coarsePointer ? 2 : 1), [elevations, coarsePointer]);
+  const rock = useMemo(createRockTexture, []);
+  const marker = useMemo(() => destinationPosition(region, elevations), [region, elevations]);
 
-  useLayoutEffect(() => {
-    [geometry.current, wireGeometry.current].forEach((surface) => {
-      const positions = surface.attributes.position;
-      for (let index = 0; index < positions.count; index += 1) {
-        const x = positions.getX(index);
-        const y = positions.getY(index);
-        positions.setZ(index, elevation(x, y));
-      }
-      positions.needsUpdate = true;
-      surface.computeVertexNormals();
-    });
-  }, []);
+  useEffect(() => {
+    const position = view === "overlook" ? [region.camera[0] * 0.5, 10.5, 9.5] : [...region.camera];
+    // Face the range more directly on portrait screens so the destination
+    // remains in frame without widening the lens or moving outside the DEM.
+    if (size.width / size.height < 0.8) position[0] = 0;
+    camera.position.fromArray(position);
+    camera.lookAt(...region.target);
+    if (controls.current) {
+      controls.current.target.fromArray(region.target);
+      controls.current.update();
+    }
+    invalidate();
+  }, [camera, invalidate, region, resetKey, view, size.width, size.height]);
 
-  useFrame((state, delta) => {
-    if (group.current) group.current.rotation.z += delta * 0.015;
-  });
-
-  const triund = [[-3.5, -2.1], [-2.9, -1.5], [-2.4, -0.8], [-2.15, 0], [-2.05, .9]];
-  const kheerganga = [[.7, -2.4], [1.1, -1.6], [1.5, -.7], [1.75, .2], [1.9, 1.05]];
-  const route = (points) => points.map(([x, y]) => [x, y, elevation(x, y) + .1]);
+  useEffect(() => () => geometry.dispose(), [geometry]);
+  useEffect(() => () => rock.dispose(), [rock]);
 
   return (
-    <group ref={group} rotation={[-0.03, 0, -0.05]}>
-      <mesh rotation={[0, 0, 0]}>
-        <planeGeometry ref={geometry} args={[10, 7.2, 55, 42]} />
-        <meshStandardMaterial color="#243028" roughness={.92} metalness={.08} side={THREE.DoubleSide} />
+    <>
+      <Sky distance={450000} sunPosition={[-40, 15, 20]} turbidity={5} rayleigh={1.1} mieCoefficient={0.006} mieDirectionalG={0.82} />
+      <fog attach="fog" args={["#9cacb3", 15, 42]} />
+      <hemisphereLight args={["#bfd7ea", "#41452d", 1.25]} />
+      <directionalLight
+        position={[-12, 11, 8]}
+        color="#ffe5bd"
+        intensity={3.1}
+        castShadow
+        shadow-mapSize={[2048, 2048]}
+        shadow-camera-left={-17}
+        shadow-camera-right={17}
+        shadow-camera-top={17}
+        shadow-camera-bottom={-17}
+        shadow-camera-near={0.5}
+        shadow-camera-far={60}
+        shadow-normalBias={0.035}
+        shadow-bias={-0.00012}
+      />
+      <mesh geometry={geometry} castShadow receiveShadow>
+        <meshStandardMaterial vertexColors roughness={0.96} metalness={0} bumpMap={rock} bumpScale={0.034} />
       </mesh>
-      <mesh position={[0, 0, .018]}>
-        <planeGeometry ref={wireGeometry} args={[10, 7.2, 55, 42]} />
-        <meshBasicMaterial color="#8ca696" wireframe transparent opacity={.2} />
-      </mesh>
-      <Line points={route(triund)} color="#b8f24b" lineWidth={2.1} />
-      <Line points={route(kheerganga)} color="#87d8ca" lineWidth={2.1} />
-      <mesh position={[-2.05, .9, elevation(-2.05, .9) + .16]}>
-        <sphereGeometry args={[.1, 20, 20]} /><meshBasicMaterial color="#b8f24b" />
-      </mesh>
-      <mesh position={[1.9, 1.05, elevation(1.9, 1.05) + .16]}>
-        <sphereGeometry args={[.1, 20, 20]} /><meshBasicMaterial color="#87d8ca" />
-      </mesh>
-    </group>
+      <group position={marker}>
+        <mesh position={[0, 0.32, 0]}>
+          <cylinderGeometry args={[0.012, 0.012, 0.64, 8]} />
+          <meshStandardMaterial color="#f4efe4" roughness={0.65} />
+        </mesh>
+        <mesh position={[0, 0.68, 0]}>
+          <sphereGeometry args={[0.058, 16, 12]} />
+          <meshBasicMaterial color={region.color} />
+        </mesh>
+        <Html center position={[0, 1, 0]} zIndexRange={[10, 0]} style={{ pointerEvents: "none" }}>
+          <span className="mountain-marker"><i style={{ background: region.color }} />{region.name}</span>
+        </Html>
+      </group>
+      <OrbitControls
+        ref={controls}
+        target={region.target}
+        enablePan={false}
+        enableZoom={false}
+        enableDamping
+        dampingFactor={0.08}
+        minPolarAngle={0.78}
+        maxPolarAngle={1.3}
+        minAzimuthAngle={-0.62}
+        maxAzimuthAngle={0.62}
+      />
+    </>
   );
 }
 
-export default function TrailTerrain() {
+export default function TrailTerrain({ region, resetKey, view }) {
+  const [terrain, setTerrain] = useState(null);
+  const [error, setError] = useState(false);
+  const [attempt, setAttempt] = useState(0);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    setError(false);
+    if (elevationCache.has(region.id)) {
+      setTerrain({ id: region.id, elevations: elevationCache.get(region.id) });
+      return () => controller.abort();
+    }
+    fetch(`/terrain/${region.id}.bin`, { signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) throw new Error("Terrain unavailable");
+        return response.arrayBuffer();
+      })
+      .then(decodeElevations)
+      .then((elevations) => {
+        if (controller.signal.aborted) return;
+        elevationCache.set(region.id, elevations);
+        setTerrain({ id: region.id, elevations });
+      })
+      .catch((failure) => { if (failure.name !== "AbortError") setError(true); });
+    return () => controller.abort();
+  }, [region.id, attempt]);
+
+  const ready = terrain?.id === region.id;
   return (
-    <Canvas dpr={[1, 1.5]} camera={{ position: [0, -8.7, 6.7], fov: 42 }} gl={{ antialias: true, alpha: true }}>
-      <ambientLight intensity={1.8} />
-      <directionalLight position={[-3, -4, 8]} intensity={3.2} color="#ece9df" />
-      <pointLight position={[4, 2, 5]} intensity={12} color="#87d8ca" />
-      <Terrain />
-      <OrbitControls enablePan={false} enableZoom={false} minPolarAngle={.7} maxPolarAngle={1.25} />
-    </Canvas>
+    <>
+      <Canvas
+        className="mountain-canvas"
+        shadows={THREE.PCFSoftShadowMap}
+        frameloop="demand"
+        dpr={[1, 1.5]}
+        camera={{ position: region.camera, fov: 48, near: 0.1, far: 100 }}
+        gl={{ antialias: true, alpha: false, powerPreference: "low-power", toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 0.88 }}
+        fallback={<div className="terrain-state">Enable WebGL in your browser to explore the 3D mountains.</div>}
+        aria-label={`Interactive 3D mountains around ${region.name}. Drag to orbit, or use the view buttons.`}
+      >
+        <color attach="background" args={["#9cacb3"]} />
+        {ready && <Landscape region={region} elevations={terrain.elevations} resetKey={resetKey} view={view} />}
+      </Canvas>
+      {(!ready || error) && <div className="terrain-state" role="status">
+        {error ? <><span>The mountain view couldn’t load.</span><button onClick={() => setAttempt((value) => value + 1)}>Try again</button></> : "Preparing the mountain view…"}
+      </div>}
+    </>
   );
 }

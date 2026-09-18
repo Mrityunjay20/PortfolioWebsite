@@ -1,0 +1,28 @@
+{
+  "resolution": 385,
+  "spanMeters": 18000,
+  "regions": [
+    {
+      "id": "triund",
+      "name": "Triund",
+      "range": "Dhauladhar range",
+      "center": [32.288, 76.365],
+      "destination": [32.26169, 76.35437],
+      "coordinates": "32.2617° N · 76.3544° E",
+      "color": "#b8f24b",
+      "camera": [4, 7.3, 11.5],
+      "target": [0, 2.5, -0.8]
+    },
+    {
+      "id": "kheerganga",
+      "name": "Kheerganga",
+      "range": "Parvati Valley",
+      "center": [32.003, 77.516],
+      "destination": [31.99187, 77.50974],
+      "coordinates": "31.9919° N · 77.5097° E",
+      "color": "#87d8ca",
+      "camera": [-4, 8.2, 11.5],
+      "target": [0, 3, -0.8]
+    }
+  ]
+}
