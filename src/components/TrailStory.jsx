@@ -1,12 +1,32 @@
-import { lazy, Suspense, useEffect, useRef, useState } from "react";
+/* eslint-disable react/prop-types -- The local error boundary consumes React-managed children. */
+import { Component, useEffect, useRef, useState } from "react";
 import mountainData from "../data/mountains.json";
-
-const TrailTerrain = lazy(() => import("./three/TrailTerrain"));
+import TrailTerrain from "./three/TrailTerrain";
 
 const trails = [
   { number: "01", name: "Triund", region: "Dhauladhar range · Himachal Pradesh", color: "lime" },
   { number: "02", name: "Kheerganga", region: "Parvati Valley · Himachal Pradesh", color: "teal" },
 ];
+
+class TerrainErrorBoundary extends Component {
+  state = { failed: false };
+
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+
+  render() {
+    if (this.state.failed) {
+      return (
+        <div className="terrain-state" role="status">
+          <span>The interactive terrain is unavailable in this browser.</span>
+          <span>The trail notes remain available below.</span>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
 
 export default function TrailStory() {
   const [selected, setSelected] = useState(0);
@@ -53,9 +73,11 @@ export default function TrailStory() {
 
       <div className="terrain-card" ref={terrainCard}>
         <div className="terrain-scene" id="mountain-view">
-          {visible && <Suspense fallback={<div className="terrain-state">Preparing the mountain view…</div>}>
-            <TrailTerrain region={region} view={view} resetKey={resetKey} />
-          </Suspense>}
+          {visible && (
+            <TerrainErrorBoundary key={`${region.id}:${resetKey}`}>
+              <TrailTerrain region={region} view={view} resetKey={resetKey} />
+            </TerrainErrorBoundary>
+          )}
         </div>
         <div className="terrain-heading">
           <p>Himalayan field notes <span>02 places explored</span></p>

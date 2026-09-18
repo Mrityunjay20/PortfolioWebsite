@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types -- The local error boundary consumes React-managed children. */
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, OrbitControls } from "@react-three/drei";
 import { Component, useMemo, useRef } from "react";
