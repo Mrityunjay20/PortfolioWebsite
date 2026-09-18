@@ -16,7 +16,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "src/data/mountains.json").read_text())
-ZOOM = 12
+ZOOM = 13
 WORLD_PIXELS = 256 * 2 ** ZOOM
 EARTH_CIRCUMFERENCE = 40075016.686
 

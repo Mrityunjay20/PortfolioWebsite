@@ -3,21 +3,23 @@ import { Canvas, useThree } from "@react-three/fiber";
 import { Html, OrbitControls, Sky } from "@react-three/drei";
 import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
+import mountainData from "../../data/mountains.json";
 import {
   createMountainGeometry,
   createRockTexture,
   decodeElevations,
   destinationPosition,
+  shadeMountainMaterial,
 } from "../../utils/mountainGeometry";
 
 const elevationCache = new Map();
 
 function Landscape({ region, elevations, resetKey, view }) {
   const controls = useRef();
-  const { camera, invalidate, size } = useThree();
+  const { camera, invalidate, size, gl } = useThree();
   const coarsePointer = useMemo(() => window.matchMedia("(pointer: coarse)").matches, []);
   const geometry = useMemo(() => createMountainGeometry(elevations, coarsePointer ? 2 : 1), [elevations, coarsePointer]);
-  const rock = useMemo(createRockTexture, []);
+  const rock = useMemo(() => createRockTexture(gl.capabilities.getMaxAnisotropy()), [gl]);
   const marker = useMemo(() => destinationPosition(region, elevations), [region, elevations]);
 
   useEffect(() => {
@@ -47,7 +49,7 @@ function Landscape({ region, elevations, resetKey, view }) {
         color="#ffe5bd"
         intensity={3.1}
         castShadow
-        shadow-mapSize={[2048, 2048]}
+        shadow-mapSize={coarsePointer ? [2048, 2048] : [4096, 4096]}
         shadow-camera-left={-17}
         shadow-camera-right={17}
         shadow-camera-top={17}
@@ -58,7 +60,14 @@ function Landscape({ region, elevations, resetKey, view }) {
         shadow-bias={-0.00012}
       />
       <mesh geometry={geometry} castShadow receiveShadow>
-        <meshStandardMaterial vertexColors roughness={0.96} metalness={0} bumpMap={rock} bumpScale={0.034} />
+        <meshStandardMaterial
+          roughness={0.96}
+          metalness={0}
+          bumpMap={rock}
+          bumpScale={0.018}
+          onBeforeCompile={shadeMountainMaterial}
+          customProgramCacheKey={() => "himalayan-surface-v2"}
+        />
       </mesh>
       <group position={marker}>
         <mesh position={[0, 0.32, 0]}>
@@ -93,15 +102,16 @@ export default function TrailTerrain({ region, resetKey, view }) {
   const [terrain, setTerrain] = useState(null);
   const [error, setError] = useState(false);
   const [attempt, setAttempt] = useState(0);
+  const terrainKey = `${mountainData.version}:${region.id}`;
 
   useEffect(() => {
     const controller = new AbortController();
     setError(false);
-    if (elevationCache.has(region.id)) {
-      setTerrain({ id: region.id, elevations: elevationCache.get(region.id) });
+    if (elevationCache.has(terrainKey)) {
+      setTerrain({ id: terrainKey, elevations: elevationCache.get(terrainKey) });
       return () => controller.abort();
     }
-    fetch(`/terrain/${region.id}.bin`, { signal: controller.signal })
+    fetch(`/terrain/${region.id}.bin?v=${mountainData.version}`, { signal: controller.signal })
       .then((response) => {
         if (!response.ok) throw new Error("Terrain unavailable");
         return response.arrayBuffer();
@@ -109,23 +119,23 @@ export default function TrailTerrain({ region, resetKey, view }) {
       .then(decodeElevations)
       .then((elevations) => {
         if (controller.signal.aborted) return;
-        elevationCache.set(region.id, elevations);
-        setTerrain({ id: region.id, elevations });
+        elevationCache.set(terrainKey, elevations);
+        setTerrain({ id: terrainKey, elevations });
       })
       .catch((failure) => { if (failure.name !== "AbortError") setError(true); });
     return () => controller.abort();
-  }, [region.id, attempt]);
+  }, [region.id, terrainKey, attempt]);
 
-  const ready = terrain?.id === region.id;
+  const ready = terrain?.id === terrainKey;
   return (
     <>
       <Canvas
         className="mountain-canvas"
         shadows={THREE.PCFSoftShadowMap}
         frameloop="demand"
-        dpr={[1, 1.5]}
+        dpr={[1.5, 2]}
         camera={{ position: region.camera, fov: 48, near: 0.1, far: 100 }}
-        gl={{ antialias: true, alpha: false, powerPreference: "low-power", toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 0.88 }}
+        gl={{ antialias: true, alpha: false, powerPreference: "high-performance", toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 0.88 }}
         fallback={<div className="terrain-state">Enable WebGL in your browser to explore the 3D mountains.</div>}
         aria-label={`Interactive 3D mountains around ${region.name}. Drag to orbit, or use the view buttons.`}
       >
