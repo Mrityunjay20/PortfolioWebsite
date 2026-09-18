@@ -103,6 +103,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .hero-visual { position: relative; align-self: stretch; min-height: 550px; overflow: hidden; border: 1px solid var(--line); border-radius: 26px; background: linear-gradient(155deg, rgba(255,255,255,.045), rgba(255,255,255,.008)); }
 .hero-visual canvas { cursor: grab; }
 .hero-visual canvas:active { cursor: grabbing; }
+.hero-canvas-fallback { position: absolute; inset: 0; display: grid; place-items: center; overflow: hidden; background: radial-gradient(circle at 50% 45%, rgba(184,242,75,.09), transparent 34%); }
+.fallback-core { width: min(42vw, 260px); aspect-ratio: 1; border-radius: 38% 62% 58% 42%; background: linear-gradient(145deg, #cef66f, #86b82c); box-shadow: inset -24px -28px 55px rgba(8,12,10,.32), 0 35px 90px rgba(184,242,75,.12); transform: rotate(18deg); }
+.fallback-orbit { position: absolute; width: min(55vw, 340px); aspect-ratio: 1.8; border: 1px solid rgba(245,242,233,.46); border-radius: 50%; transform: rotate(-18deg); }
+.fallback-orbit-tall { transform: rotate(63deg) scale(.88); border-color: rgba(184,242,75,.42); }
 .visual-meta, .visual-caption { position: absolute; z-index: 2; left: 22px; right: 22px; display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; pointer-events: none; }
 .visual-meta-top { top: 20px; }
 .visual-caption { bottom: 20px; }

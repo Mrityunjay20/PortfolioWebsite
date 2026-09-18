@@ -1,7 +1,29 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Float, OrbitControls } from "@react-three/drei";
-import { useMemo, useRef } from "react";
+import { Component, useMemo, useRef } from "react";
 import * as THREE from "three";
+
+function StaticSignalForm() {
+  return (
+    <div className="hero-canvas-fallback" role="img" aria-label="Abstract digital signal form">
+      <span className="fallback-orbit fallback-orbit-wide" />
+      <span className="fallback-orbit fallback-orbit-tall" />
+      <span className="fallback-core" />
+    </div>
+  );
+}
+
+class HeroCanvasBoundary extends Component {
+  state = { failed: false };
+
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+
+  render() {
+    return this.state.failed ? <StaticSignalForm /> : this.props.children;
+  }
+}
 
 function SignalForm() {
   const group = useRef();
@@ -62,12 +84,19 @@ function SignalForm() {
 
 export default function HeroCanvas() {
   return (
-    <Canvas dpr={[1, 1.6]} camera={{ position: [0, 0, 8], fov: 42 }} gl={{ antialias: true, alpha: true }}>
-      <ambientLight intensity={1.7} />
-      <directionalLight position={[4, 5, 6]} intensity={3.2} color="#f5f2e9" />
-      <pointLight position={[-3, -2, 3]} intensity={14} color="#87d8ca" />
-      <SignalForm />
-      <OrbitControls enablePan={false} enableZoom={false} autoRotate autoRotateSpeed={0.35} />
-    </Canvas>
+    <HeroCanvasBoundary>
+      <Canvas
+        dpr={[1, 1.6]}
+        camera={{ position: [0, 0, 8], fov: 42 }}
+        gl={{ antialias: true, alpha: true }}
+        fallback={<StaticSignalForm />}
+      >
+        <ambientLight intensity={1.7} />
+        <directionalLight position={[4, 5, 6]} intensity={3.2} color="#f5f2e9" />
+        <pointLight position={[-3, -2, 3]} intensity={14} color="#87d8ca" />
+        <SignalForm />
+        <OrbitControls enablePan={false} enableZoom={false} autoRotate autoRotateSpeed={0.35} />
+      </Canvas>
+    </HeroCanvasBoundary>
   );
 }
