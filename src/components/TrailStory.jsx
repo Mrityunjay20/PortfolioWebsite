@@ -10,7 +10,7 @@ const trails = [
     region: "Dhauladhar range · Himachal Pradesh",
     color: "lime",
     altitude: "2,875 m",
-    approach: "Dharamkot → Gallu",
+    approach: "Dharamkot → Gallu Devi Temple",
     nearby: "McLeod Ganj · Bhagsu · Kangra Valley",
     landscape: "Oak, deodar & rhododendron",
     note: "A high meadow just below the Dhauladhar snowline, with the white range rising on one side and the Kangra Valley opening toward the Shivaliks on the other.",

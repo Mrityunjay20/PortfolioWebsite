@@ -18,7 +18,7 @@
       "routeTarget": [-2.1, 1.8, 2.4],
       "landmarks": [
         { "name": "Dharamkot", "kind": "Base", "coordinates": [32.24553, 76.326] },
-        { "name": "Gallu", "kind": "Trailhead", "coordinates": [32.24926, 76.32095] },
+        { "name": "Gallu Devi Temple", "kind": "Trailhead", "coordinates": [32.24926, 76.32095] },
         { "name": "Magic View", "kind": "Waypoint", "coordinates": [32.25582, 76.34275] }
       ]
     },
