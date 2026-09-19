@@ -1,12 +1,13 @@
 /* eslint-disable react/prop-types -- Internal components consume the checked-in mountain data schema. */
 import { Canvas, useThree } from "@react-three/fiber";
-import { Html, OrbitControls, Sky } from "@react-three/drei";
+import { Html, Line, OrbitControls, Sky } from "@react-three/drei";
 import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import mountainData from "../../data/mountains.json";
 import {
   createMountainGeometry,
   createRockTexture,
+  coordinatePosition,
   decodeElevations,
   destinationPosition,
   shadeMountainMaterial,
@@ -21,20 +22,43 @@ function Landscape({ region, elevations, resetKey, view }) {
   const geometry = useMemo(() => createMountainGeometry(elevations, coarsePointer ? 2 : 1), [elevations, coarsePointer]);
   const rock = useMemo(() => createRockTexture(gl.capabilities.getMaxAnisotropy()), [gl]);
   const marker = useMemo(() => destinationPosition(region, elevations), [region, elevations]);
+  const landmarks = useMemo(() => region.landmarks.map((landmark) => ({
+    ...landmark,
+    position: coordinatePosition(landmark.coordinates, region, elevations),
+  })), [region, elevations]);
+  const routePoints = useMemo(() => {
+    const stops = [...region.landmarks.map((landmark) => landmark.coordinates), region.destination];
+    const points = [];
+    stops.slice(0, -1).forEach((start, segment) => {
+      const end = stops[segment + 1];
+      for (let step = 0; step < 18; step += 1) {
+        if (segment > 0 && step === 0) continue;
+        const progress = step / 17;
+        const coordinate = [
+          THREE.MathUtils.lerp(start[0], end[0], progress),
+          THREE.MathUtils.lerp(start[1], end[1], progress),
+        ];
+        const point = coordinatePosition(coordinate, region, elevations);
+        points.push([point[0], point[1] + 0.07, point[2]]);
+      }
+    });
+    return points;
+  }, [region, elevations]);
+  const activeTarget = view === "overlook" ? region.routeTarget : region.target;
 
   useEffect(() => {
-    const position = view === "overlook" ? [region.camera[0] * 0.5, 10.5, 9.5] : [...region.camera];
+    const position = view === "overlook" ? [...region.overlookCamera] : [...region.camera];
     // Face the range more directly on portrait screens so the destination
     // remains in frame without widening the lens or moving outside the DEM.
     if (size.width / size.height < 0.8) position[0] = 0;
     camera.position.fromArray(position);
-    camera.lookAt(...region.target);
+    camera.lookAt(...activeTarget);
     if (controls.current) {
-      controls.current.target.fromArray(region.target);
+      controls.current.target.fromArray(activeTarget);
       controls.current.update();
     }
     invalidate();
-  }, [camera, invalidate, region, resetKey, view, size.width, size.height]);
+  }, [activeTarget, camera, invalidate, region, resetKey, view, size.width, size.height]);
 
   useEffect(() => () => geometry.dispose(), [geometry]);
   useEffect(() => () => rock.dispose(), [rock]);
@@ -69,6 +93,28 @@ function Landscape({ region, elevations, resetKey, view }) {
           customProgramCacheKey={() => "himalayan-surface-v2"}
         />
       </mesh>
+      <Line
+        points={routePoints}
+        color={region.color}
+        lineWidth={1.5}
+        transparent
+        opacity={0.82}
+        dashed
+        dashScale={8}
+        dashSize={0.42}
+        gapSize={0.24}
+      />
+      {landmarks.map((landmark) => (
+        <group position={landmark.position} key={landmark.name}>
+          <mesh position={[0, 0.1, 0]}>
+            <sphereGeometry args={[0.045, 12, 8]} />
+            <meshBasicMaterial color="#f4efe4" />
+          </mesh>
+          <Html center position={[0, 0.47, 0]} zIndexRange={[8, 0]} style={{ pointerEvents: "none" }}>
+            <span className="terrain-landmark"><em>{landmark.kind}</em><strong>{landmark.name}</strong></span>
+          </Html>
+        </group>
+      ))}
       <group position={marker}>
         <mesh position={[0, 0.32, 0]}>
           <cylinderGeometry args={[0.012, 0.012, 0.64, 8]} />
@@ -79,12 +125,16 @@ function Landscape({ region, elevations, resetKey, view }) {
           <meshBasicMaterial color={region.color} />
         </mesh>
         <Html center position={[0, 1, 0]} zIndexRange={[10, 0]} style={{ pointerEvents: "none" }}>
-          <span className="mountain-marker"><i style={{ background: region.color }} />{region.name}</span>
+          <span className="mountain-marker">
+            <i style={{ background: region.color }} />
+            <strong>{region.name}</strong>
+            <em>{region.altitude}</em>
+          </span>
         </Html>
       </group>
       <OrbitControls
         ref={controls}
-        target={region.target}
+        target={activeTarget}
         enablePan={false}
         enableZoom={false}
         enableDamping

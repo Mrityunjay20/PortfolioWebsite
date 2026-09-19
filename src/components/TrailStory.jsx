@@ -138,10 +138,10 @@ export default function TrailStory() {
           <div className="terrain-place" aria-live="polite"><strong>{region.range}</strong><span>{region.coordinates}</span></div>
           <div className="mountain-view-controls" role="group" aria-label="Mountain camera view">
             <button type="button" aria-pressed={view === "ridge"} onClick={() => { setView("ridge"); setResetKey((value) => value + 1); }}>Ridge view</button>
-            <button type="button" aria-pressed={view === "overlook"} onClick={() => { setView("overlook"); setResetKey((value) => value + 1); }}>Overlook</button>
-            <span>Drag to explore</span>
+            <button type="button" aria-pressed={view === "overlook"} onClick={() => { setView("overlook"); setResetKey((value) => value + 1); }}>Trail overview</button>
+            <span>{view === "overlook" ? "Key waypoints · orientation only" : "Drag to explore"}</span>
           </div>
-          <div className="terrain-credit"><span>Real elevation · alpine rendering</span><a href="/terrain/README.md" target="_blank" rel="noreferrer">Terrain: Mapzen / USGS ↗</a></div>
+          <div className="terrain-credit"><span>Real elevation · route landmarks</span><a href="/terrain/README.md" target="_blank" rel="noreferrer">Terrain: Mapzen / USGS ↗</a></div>
         </div>
       </div>
     </section>

@@ -41,8 +41,8 @@ export function createMountainGeometry(elevations, stride = 1) {
   return geometry;
 }
 
-export function destinationPosition(region, elevations) {
-  const [latitude, longitude] = region.destination;
+export function coordinatePosition(coordinates, region, elevations) {
+  const [latitude, longitude] = coordinates;
   const [centerLat, centerLon] = region.center;
   const mercator = (degrees) => Math.asinh(Math.tan(THREE.MathUtils.degToRad(degrees)));
   const localRadius = 6378137 * Math.cos(THREE.MathUtils.degToRad(centerLat));
@@ -57,6 +57,10 @@ export function destinationPosition(region, elevations) {
   const north = THREE.MathUtils.lerp(elevations[row * size + col], elevations[row * size + col + 1], gx - col);
   const south = THREE.MathUtils.lerp(elevations[(row + 1) * size + col], elevations[(row + 1) * size + col + 1], gx - col);
   return [x, toWorldHeight(THREE.MathUtils.lerp(north, south, gz - row)) + 0.08, z];
+}
+
+export function destinationPosition(region, elevations) {
+  return coordinatePosition(region.destination, region, elevations);
 }
 
 export function createRockTexture(maxAnisotropy = 1) {

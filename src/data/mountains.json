@@ -10,9 +10,17 @@
       "center": [32.288, 76.365],
       "destination": [32.26169, 76.35437],
       "coordinates": "32.2617° N · 76.3544° E",
+      "altitude": "2,875 m",
       "color": "#b8f24b",
       "camera": [4, 7.3, 11.5],
-      "target": [0, 2.5, -0.8]
+      "target": [0, 2.5, -0.8],
+      "overlookCamera": [1, 12, 15],
+      "routeTarget": [-2.1, 1.8, 2.4],
+      "landmarks": [
+        { "name": "Dharamkot", "kind": "Base", "coordinates": [32.24553, 76.326] },
+        { "name": "Gallu", "kind": "Trailhead", "coordinates": [32.24926, 76.32095] },
+        { "name": "Magic View", "kind": "Waypoint", "coordinates": [32.25582, 76.34275] }
+      ]
     },
     {
       "id": "kheerganga",
@@ -21,9 +29,17 @@
       "center": [32.003, 77.516],
       "destination": [31.99187, 77.50974],
       "coordinates": "31.9919° N · 77.5097° E",
+      "altitude": "2,956 m",
       "color": "#87d8ca",
       "camera": [-4, 8.2, 11.5],
-      "target": [0, 3, -0.8]
+      "target": [0, 3, -0.8],
+      "overlookCamera": [-1.5, 13, 16],
+      "routeTarget": [-3.4, 2.2, 1.7],
+      "landmarks": [
+        { "name": "Barshaini", "kind": "Trailhead", "coordinates": [32.001, 77.44024] },
+        { "name": "Nakthan", "kind": "Village", "coordinates": [32.00446, 77.47064] },
+        { "name": "Rudranag", "kind": "Waterfall", "coordinates": [32.00179, 77.48523] }
+      ]
     }
   ]
 }

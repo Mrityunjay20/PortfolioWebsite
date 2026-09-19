@@ -17,7 +17,8 @@ The source elevations are public data; the USGS has not endorsed this rendering.
 Coordinates are in `src/data/mountains.json`. The Triund campsite position is
 from [Indiahikes](https://indiahikes.com/documented-trek/triund-trek); the Kheerganga
 hot spring position is from [OpenStreetMap](https://www.openstreetmap.org/node/2380563860)
-(© OpenStreetMap contributors, ODbL). Destination markers identify places,
-not recorded GPS tracks. The scene is not a navigation map.
+(© OpenStreetMap contributors, ODbL). Surrounding landmark positions were resolved
+from OpenStreetMap on 19 September 2026. The rendered route joins these key waypoints
+and is an orientation aid, not a recorded GPS track. The scene is not a navigation map.
 
 Rebuild with `python3 scripts/prepare-mountain-data.py` (requires Pillow).
