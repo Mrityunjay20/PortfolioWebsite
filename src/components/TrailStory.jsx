@@ -4,8 +4,28 @@ import mountainData from "../data/mountains.json";
 import TrailTerrain from "./three/TrailTerrain";
 
 const trails = [
-  { number: "01", name: "Triund", region: "Dhauladhar range · Himachal Pradesh", color: "lime" },
-  { number: "02", name: "Kheerganga", region: "Parvati Valley · Himachal Pradesh", color: "teal" },
+  {
+    number: "01",
+    name: "Triund",
+    region: "Dhauladhar range · Himachal Pradesh",
+    color: "lime",
+    altitude: "2,875 m",
+    approach: "Dharamkot → Gallu",
+    nearby: "McLeod Ganj · Bhagsu · Kangra Valley",
+    landscape: "Oak, deodar & rhododendron",
+    note: "A high meadow just below the Dhauladhar snowline, with the white range rising on one side and the Kangra Valley opening toward the Shivaliks on the other.",
+  },
+  {
+    number: "02",
+    name: "Kheerganga",
+    region: "Parvati Valley · Himachal Pradesh",
+    color: "teal",
+    altitude: "2,956 m",
+    approach: "Barshaini → Nakthan → Rudranag",
+    nearby: "Tosh · Kasol · Parvati River",
+    landscape: "Conifer forest & alpine clearing",
+    note: "The trail follows the Parvati catchment through forest and village country to a broad mountain clearing known for its natural hot spring and protected Himalayan surroundings.",
+  },
 ];
 
 class TerrainErrorBoundary extends Component {
@@ -35,6 +55,7 @@ export default function TrailStory() {
   const [visible, setVisible] = useState(false);
   const terrainCard = useRef();
   const region = mountainData.regions[selected];
+  const selectedTrail = trails[selected];
 
   useEffect(() => {
     if (!("IntersectionObserver" in window)) {
@@ -61,14 +82,34 @@ export default function TrailStory() {
           prepare carefully, adapt to the terrain, and keep moving when the route gets uncertain.
         </p>
         <div className="trail-list">
-          {trails.map((trail) => (
-            <div className="trail-item" key={trail.name}>
+          {trails.map((trail, index) => (
+            <button
+              className="trail-item"
+              type="button"
+              key={trail.name}
+              aria-pressed={selected === index}
+              aria-controls="mountain-view trail-context"
+              onClick={() => { setSelected(index); setResetKey((value) => value + 1); }}
+            >
               <span>{trail.number}</span>
               <div><strong>{trail.name}</strong><small>{trail.region}</small></div>
               <i className={trail.color} /><em>Completed</em>
-            </div>
+            </button>
           ))}
         </div>
+        <article className="trail-context" id="trail-context" aria-live="polite">
+          <div className="trail-context-heading">
+            <span>Surrounding area</span>
+            <strong>{selectedTrail.name}</strong>
+          </div>
+          <p>{selectedTrail.note}</p>
+          <dl>
+            <div><dt>Elevation</dt><dd>{selectedTrail.altitude}</dd></div>
+            <div><dt>Approach</dt><dd>{selectedTrail.approach}</dd></div>
+            <div><dt>Nearby</dt><dd>{selectedTrail.nearby}</dd></div>
+            <div><dt>Terrain</dt><dd>{selectedTrail.landscape}</dd></div>
+          </dl>
+        </article>
       </div>
 
       <div className="terrain-card" ref={terrainCard}>

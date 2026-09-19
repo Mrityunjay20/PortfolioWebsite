@@ -172,7 +172,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .trail-copy { align-self: center; }
 .trail-copy > p:not(.section-kicker) { margin: 28px 0 44px; color: var(--muted); font-size: 15px; line-height: 1.75; }
 .trail-list { display: grid; border-top: 1px solid var(--line); }
-.trail-item { display: grid; grid-template-columns: auto 1fr auto auto; gap: 17px; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.trail-item { width: 100%; display: grid; grid-template-columns: auto 1fr auto auto; gap: 17px; align-items: center; padding: 20px 0; border: 0; border-bottom: 1px solid var(--line); color: inherit; background: transparent; font: inherit; text-align: left; cursor: pointer; transition: padding .22s ease, background .22s ease; }
+.trail-item[aria-pressed="true"] { padding-inline: 12px; background: linear-gradient(90deg, rgba(184,242,75,.08), transparent); }
+.trail-item:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .trail-item > span { color: var(--muted); font-size: 10px; }
 .trail-item div { display: grid; gap: 5px; }
 .trail-item strong { font-size: 15px; }
@@ -181,6 +183,15 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .trail-item i.lime { background: var(--accent); box-shadow: 0 0 12px var(--accent); }
 .trail-item i.teal { background: var(--teal); box-shadow: 0 0 12px var(--teal); }
 .trail-item em { color: var(--muted); font-size: 10px; font-style: normal; text-transform: uppercase; }
+.trail-context { margin-top: 22px; padding: 21px; border: 1px solid var(--line); border-radius: 17px; background: linear-gradient(145deg, rgba(255,255,255,.035), transparent); }
+.trail-context-heading { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 15px; }
+.trail-context-heading span { color: var(--accent); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
+.trail-context-heading strong { font: 500 1.15rem/1 "Manrope", sans-serif; letter-spacing: -.03em; }
+.trail-context > p { margin: 0 0 20px; color: #c2c8c1; font-size: 12px; line-height: 1.7; }
+.trail-context dl { display: grid; grid-template-columns: 1fr 1fr; gap: 15px 20px; margin: 0; padding-top: 17px; border-top: 1px solid var(--line); }
+.trail-context dl div { display: grid; gap: 5px; }
+.trail-context dt { color: var(--muted); font-size: 8px; letter-spacing: .1em; text-transform: uppercase; }
+.trail-context dd { margin: 0; color: var(--paper); font-size: 10px; line-height: 1.4; }
 .terrain-card { position: relative; min-height: 650px; overflow: hidden; isolation: isolate; border: 1px solid var(--line); border-radius: 25px; background: #8eabb7; }
 .terrain-scene { position: absolute; inset: 0; }
 .terrain-card canvas { cursor: grab; }
@@ -313,6 +324,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .discipline-grid, .github-grid, .leadership-grid { grid-template-columns: 1fr; }
   .discipline-card { min-height: 300px; }
   .trail-section { gap: 44px; }
+  .trail-context { padding: 18px; }
   .terrain-card { min-height: 570px; border-radius: 20px; }
   .terrain-heading, .terrain-footer { padding-left: 18px; padding-right: 18px; }
   .terrain-heading > p { font-size: 9px; letter-spacing: .07em; }
